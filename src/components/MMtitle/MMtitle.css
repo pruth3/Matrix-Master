@@ -1,0 +1,13 @@
+.title {
+  font-family: Code;
+  margin-bottom: 0px;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  float: right;
+  margin-right: 2%;
+}
+
+.title h1 {
+	font-family: Code;
+	margin-top: 5px;
+}

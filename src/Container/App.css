@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right:0;
+  left: 0;
+  z-index: -1;
+}
+
+.left, .right {
+  
+  margin: 2%;
+  margin-top: 0px;
+}
+
+.left {
+  height: 740px;
+  border: solid #cdecff;
+  float: left; 
+  width: 13%;
+  margin-top: 25px;
+  padding-top: 7px;
+}
+
+.right {
+  height: 650px;
+  float: right;
+  border: solid #ff725c;
+  margin-left: 0px;
+}
+
+
+
+p {
+  font-family: Code;
+}
+
+.Home {
+  margin-top: 0px;
+}
