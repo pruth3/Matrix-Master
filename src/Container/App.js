@@ -6,6 +6,7 @@ import tachyons from 'tachyons';
 import MMtitle from '../components/MMtitle/MMtitle';
 import RightBox from '../components/RightBox/RightBox';
 import MyButton from '../components/MyButton/MyButton';
+//Divneet contribution
 //comment
 const particlesOptions = {
   particles: {
