@@ -21,8 +21,4 @@ const Home = () => {
 	); 
 }
 
-export default Home; 
-
-// <div classNameName="home w-100">
-// 			<h1 classNameName=" w-80 center homeText"> An open source computational web application for everyone. Feel free to make any changes you like.</h1>
-// 		</div> 
+export default Home;
