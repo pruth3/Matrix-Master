@@ -21,9 +21,6 @@ const RightBox = ({page}) => {
 	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
-				(page === "Home") ? 
-					<Home/>
-				:
 				(page === "AboutUs") ? 
 					<AboutUs/>
 				:
@@ -60,7 +57,10 @@ const RightBox = ({page}) => {
 				(page === "Stats") ? 
 					<Stats/>
 				:
-				<Contact/>
+				(page === "Contact")?
+					<Contact/>
+				:
+				<Home/>
 			}
        </div>
 	);
