@@ -1,8 +1,5 @@
 import {CHANGE_PAGE} from './constants.js'
 
-// the currentPage object will only be used at the start of the program, 
-// it represents the inital state
-
 const currentPage = {
 	page: 'Home'
 }

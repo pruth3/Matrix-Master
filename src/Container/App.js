@@ -35,6 +35,7 @@ const particlesOptions = {
 
 class App extends Component {
   render() {
+    const {setNewPage, page} = this.props;
     return (
       <div className='App'>
         <Particles className='particles' params={particlesOptions}/>
@@ -42,23 +43,23 @@ class App extends Component {
         <MMtitle/>
 
         <div className="left bg-blue white b--lightest-blue br3">
-          <MyButton buttonName='Home'             setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Linear Algebra 1' setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Linear Algebra 2' setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Calculus 1'       setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Calculus 2'       setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Calculus 3'       setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Calculus 4'       setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Statistics'       setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Mechanics'        setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Electricity'      setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Modern Physics'   setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Programming'      setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='About Us'         setNewPage={this.props.setNewPage}/>
-          <MyButton buttonName='Contact Us'       setNewPage={this.props.setNewPage}/>
+          <MyButton buttonName='Home'             setNewPage={setNewPage}/>
+          <MyButton buttonName='Linear Algebra 1' setNewPage={setNewPage}/>
+          <MyButton buttonName='Linear Algebra 2' setNewPage={setNewPage}/>
+          <MyButton buttonName='Calculus 1'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Calculus 2'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Calculus 3'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Calculus 4'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Statistics'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Mechanics'        setNewPage={setNewPage}/>
+          <MyButton buttonName='Electricity'      setNewPage={setNewPage}/>
+          <MyButton buttonName='Modern Physics'   setNewPage={setNewPage}/>
+          <MyButton buttonName='Programming'      setNewPage={setNewPage}/>
+          <MyButton buttonName='About Us'         setNewPage={setNewPage}/>
+          <MyButton buttonName='Contact Us'       setNewPage={setNewPage}/>
         </div>
 
-        <RightBox page={this.props.page}/>
+        <RightBox page={page}/>
 
       </div>
     );
