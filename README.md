@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Contributors
 
-apanesar11 \newline
-pruth3 \newline
-DivneetSingh26 \newline
-GP146 \newline
+apanesar11  
+pruth3  
+DivneetSingh26  
+GP146  
