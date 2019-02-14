@@ -1,4 +1,9 @@
-import {CHANGE_PAGE} from './constants.js'
+import {
+
+	CHANGE_PAGE, 
+	CREATE_MATRIX
+
+} from './constants.js'
 
 const currentPage = {
 	page: 'Home'
@@ -14,3 +19,13 @@ const newPage = (state={currentPage}, action={}) => {
 }
 
 export default newPage;
+
+const currentMatrix = {
+	dim: [0,0]
+}
+
+const matrix = (state={currentMatrix}, action={}) => {
+	switch (action.type) {
+		case 
+	}
+}

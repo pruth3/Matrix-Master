@@ -15,3 +15,21 @@
 .matBorder table {
 	margin: 0 auto;
 }
+
+.matrixAddition {
+
+}
+
+.matDim {
+	width: 30px;
+	text-align: center;
+}
+
+.selection {
+	display: inline-block;
+	margin: 10px;
+}
+
+.submitButton {
+	width: 70px;
+}

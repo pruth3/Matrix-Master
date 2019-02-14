@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
   return {
     page: state.newPage.page
   }
-}
+} 
 
 const mapDispatchToProps = (dispatch) => {
   return {

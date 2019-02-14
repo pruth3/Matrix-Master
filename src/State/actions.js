@@ -1,4 +1,9 @@
-import {CHANGE_PAGE} from './constants.js'
+import {
+
+    CHANGE_PAGE,
+    CREATE_MATRIX
+
+} from './constants.js'
 
 export const setNewPage = (text) => {
 	let livePage = 'Home'; 
@@ -23,4 +28,11 @@ export const setNewPage = (text) => {
 		type: CHANGE_PAGE,
 		payload: livePage
 	}
+}
+
+export const createMatrix = (row, col) => {
+  return {
+    type: CREATE_MATRIX, 
+    payload: [1, 2]
+  }
 }
