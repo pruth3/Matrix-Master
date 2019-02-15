@@ -9,7 +9,7 @@ import RightBox from '../Components/RightBox/RightBox';
 import MyButton from '../Components/MyButton/MyButton';
 import {setNewPage} from '../State/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { 
   return {
     page: state.newPage.page
   }

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './LinAlgOne.css';
-//import {Bar} from 'react-chartjs-2';
+//import {Bar} from 'react-chartjs-2';s
 import Matrix from './Matrix/Matrix'
 import {
 	setCreateMatrix
@@ -16,8 +16,14 @@ const mapStateToProps = (state) => {
 	}
 } 
 
-class LinAlgOne extends React.Component {
+const mapDispatchToProps = (dispatch) => {
+	console.log("dispatch => props")
+ 	return {
+		setCreateMatrix: (event) => dispatch(setCreateMatrix(document.getElementById('rows').value, document.getElementById('cols').value))
+	}
+}
 
+class LinAlgOne extends React.Component {
 	render() {
 		console.log('render', this.props.dim)
 		return(
@@ -68,16 +74,6 @@ class LinAlgOne extends React.Component {
 	}
 }
 
-
-const mapDispatchToProps = (dispatch) => {
-	console.log("dispatch => props")
- 	return {
-		setCreateMatrix: (event) => dispatch(setCreateMatrix(document.getElementById('rows').value, document.getElementById('cols').value))
-	}
-}
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(LinAlgOne); 
 
-					//<Matrix rows={this.props.dim[0]} cols={this.props.dim[1]}/>
 
