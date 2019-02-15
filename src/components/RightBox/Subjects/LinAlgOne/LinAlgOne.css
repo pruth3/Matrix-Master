@@ -1,27 +1,10 @@
-.matBox {
-	width: 30px;
-}
-
-.matBorder {
-	border: solid;
-	color: white;
-	width: 150px;
-	border-radius: 20px;
-	border-top: none;
-	border-bottom: none;
-	margin: 20px;
-}
-
-.matBorder table {
-	margin: 0 auto;
-}
 
 .matrixAddition {
 
 }
 
 .matDim {
-	width: 30px;
+	width: 50px;
 	text-align: center;
 }
 

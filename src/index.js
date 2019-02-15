@@ -6,12 +6,14 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
-import newPage from './State/reducers';
+import {newPage} from './State/reducers';
+import createMatrix from './Components/RightBox/Subjects/LinAlgOne/State/reducers'
 
 const logger = createLogger();
 
 const rootReducer = combineReducers({
-	newPage
+	newPage, 
+	createMatrix
 })
 
 const store = createStore(rootReducer, applyMiddleware(logger));

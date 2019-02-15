@@ -4,24 +4,22 @@ import {connect} from 'react-redux';
 import tachyons from 'tachyons';
 import './LinAlgOne.css';
 //import {Bar} from 'react-chartjs-2';
+import Matrix from './Matrix/Matrix'
 import {
-	createMatrix
-} from '..../State/actions';
+	setCreateMatrix
+} from './State/actions';
 
 const mapStateToProps = (state) => {
-  return {
-    
-  }
+	console.log('state => props')
+  	return {
+   		dim: state.createMatrix.dim
+	}
 } 
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    
-  }
-}
-
 class LinAlgOne extends React.Component {
+
 	render() {
+		console.log('render', this.props.dim)
 		return(
 			<div>
 				<div className="bg-black p2 matrixAddition">
@@ -29,44 +27,57 @@ class LinAlgOne extends React.Component {
 					<div>
 						<div className="selection">
 							<p>
-								Enter Matrix Rows:<br/><input className="matDim"/>
+								Enter Matrix Rows:<br/>
+								<select id="rows" className="matDim">
+								 	<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
 							</p>
 						</div>
 						<div className="selection">
 							<p>
-								Enter Matrix Columns:<br/><input className="matDim"/>
+								Enter Matrix Columns:<br/>
+								<select id="cols" className="matDim">
+								 	<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
 							</p>
 						</div>
 					</div>
-					<input type="button"
-						   className="db no-underline near-black bg-animate bg-near-white hover-bg-gray 
+					<input  type="button"
+						    className="db no-underline near-black bg-animate bg-near-white hover-bg-gray 
 								       inline-flex items-center ma2 tc br2 pa2 submitButton"
-						   value="Submit"/>
+						    value="Submit"
+						    onClick={this.props.setCreateMatrix}
+						   />
+					{
+					(this.props.dim) ? 
+					<div>
+						<Matrix rows={this.props.dim[0]} cols={this.props.dim[1]} />
+						<Matrix rows={this.props.dim[0]} cols={this.props.dim[1]} />
+					</div>:
+					<p>Click submit to get matrices</p>
+					}
 				</div>
 			</div> 
 		);
 	}
 }
 
+
+const mapDispatchToProps = (dispatch) => {
+	console.log("dispatch => props")
+ 	return {
+		setCreateMatrix: (event) => dispatch(setCreateMatrix(document.getElementById('rows').value, document.getElementById('cols').value))
+	}
+}
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(LinAlgOne); 
 
+					//<Matrix rows={this.props.dim[0]} cols={this.props.dim[1]}/>
 
-// <form className="matBorder black-80">
-// 	<table>
-// 		<tr>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 		</tr>
-// 		<tr>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 		</tr>
-// 		<tr>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 			<td> <input className="matBox"/> </td>
-// 		</tr>
-// 	</table>
-// </form>

@@ -1,7 +1,6 @@
 import {
 
-    CHANGE_PAGE,
-    CREATE_MATRIX
+    CHANGE_PAGE
 
 } from './constants.js'
 
@@ -26,13 +25,7 @@ export const setNewPage = (text) => {
     }
 	return {
 		type: CHANGE_PAGE,
-		payload: livePage
+		payload: livePage 
 	}
 }
-
-export const createMatrix = (row, col) => {
-  return {
-    type: CREATE_MATRIX, 
-    payload: [1, 2]
-  }
-}
+ 

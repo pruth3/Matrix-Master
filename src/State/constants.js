@@ -1,2 +1,1 @@
 export const CHANGE_PAGE = 'CHANGE_PAGE';
-export const CREATE_MATRIX = 'CREATE_MATRIX';
