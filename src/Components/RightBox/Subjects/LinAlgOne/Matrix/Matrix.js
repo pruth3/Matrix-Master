@@ -3,12 +3,13 @@ import React from 'react';
 import tachyons from 'tachyons';
 import './Matrix.css';
 
-const Matrix = ({rows, cols}) => {
+const Matrix = ({assignID, rows, cols, setCreateMatrix}) => {
 
-	const subItems = (cols) => {
+	const subItems = (i, cols) => {
 		let td = [];
 		for (var j=0; j<cols; ++j) {
-			td.push(<td><input className="matBox"/></td>)
+			let stringCoord = i.toString() + j.toString();
+			td.push(<td><input id={stringCoord} className="matBox" onChange={setCreateMatrix} /></td>)
 		}
 		return td;
 	}
@@ -16,14 +17,14 @@ const Matrix = ({rows, cols}) => {
 	const items = (rows, cols) => {
 		let tr=[];
 		for (var i=0; i < rows; ++i) {
-			tr.push(<tr>{subItems(cols)}</tr>)
+			tr.push(<tr>{subItems(i, cols)}</tr>)
 		}
 		return tr;
 	}
 
 	return(
 		<form className="black-80 w-40 ">
-			<table className="matBorder">
+			<table className="matBorder" id={assignID}>
 				{items(rows, cols)}
 			</table>
 		</form>
