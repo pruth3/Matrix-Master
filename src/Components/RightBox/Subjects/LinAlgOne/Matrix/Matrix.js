@@ -14,7 +14,11 @@ const Matrix = ({assignID, rows, cols, setCreateMatrix}) => {
 
 		for (var j=0; j<cols; ++j) {
 			let stringCoord = matNum.toString() + i.toString() + j.toString();
-			td.push(<td><input id={stringCoord} className="matBox" onChange={setCreateMatrix} /></td>)
+			td.push(
+				<td>
+					<input id={stringCoord} defaultValue="" className="matBox" onChange={setCreateMatrix} />
+				</td>
+			)
 		}
 		return td;
 	}
@@ -22,13 +26,19 @@ const Matrix = ({assignID, rows, cols, setCreateMatrix}) => {
 	const items = (rows, cols) => {
 		let tr=[];
 		for (var i=0; i < rows; ++i) {
-			tr.push(<tr>{subItems(i, cols)}</tr>)
+			tr.push(
+				<tr>
+					{subItems(i, cols)}
+				</tr>
+			)
 		}
 		return tr;
 	}
 
+	const formID = assignID + 'form';
+
 	return(
-		<form className="black-80 w-40 ">
+		<form id={formID} className="black-80 w-40 ">
 			<table className="matBorder" id={assignID}>
 				{items(rows, cols)}
 			</table>
