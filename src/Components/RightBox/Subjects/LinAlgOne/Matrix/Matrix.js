@@ -7,8 +7,13 @@ const Matrix = ({assignID, rows, cols, setCreateMatrix}) => {
 
 	const subItems = (i, cols) => {
 		let td = [];
+		var matNum = 1;
+		if (assignID==='mat2') {
+			matNum = 2; 
+		}
+
 		for (var j=0; j<cols; ++j) {
-			let stringCoord = i.toString() + j.toString();
+			let stringCoord = matNum.toString() + i.toString() + j.toString();
 			td.push(<td><input id={stringCoord} className="matBox" onChange={setCreateMatrix} /></td>)
 		}
 		return td;
