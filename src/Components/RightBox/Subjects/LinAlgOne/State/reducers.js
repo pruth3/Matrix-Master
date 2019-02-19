@@ -15,7 +15,22 @@ const currentMatrix = {
 	addMatrix: false
 }
 
+const resetValues = () => {
+	// this assumes an 8x8 matrix is the largest 
+	for (var i = 0; i < 8; ++i) {
+		for (var j = 0; j < 8; ++j) {
+			const strI = i.toString();
+			const strJ = j.toString();
+			if (document.getElementById('1'+strI+strJ)) {
+				document.getElementById('1'+strI+strJ).value = '';
+				document.getElementById('2'+strI+strJ).value = '';
+			}
+		}
+	}
+}
+
 const createArray = (row, col) => {
+	resetValues();
 	var lst = [];
 	for (let i = 0; i < row; ++i) {
 		var subLst = [];
@@ -37,6 +52,9 @@ const modifyArray = (id, value, currArray) => {
 }
 
 const createMatrix = (state={currentMatrix}, action={}) => {
+	if(document.getElementById('100')) {
+		console.log(document.getElementById('100').value)
+	}
 	switch (action.type) {
 		case CREATE_MATRIX:
 			return Object.assign({}, state, {row: action.payload[0], 
