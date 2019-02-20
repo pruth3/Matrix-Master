@@ -32,6 +32,10 @@ const mapDispatchToProps = (dispatch) => {
 
 class LinAlgOne extends React.Component {
 	render() {
+		const {
+			row, col, matrixArray1, matrixArray2, 
+			addMatrix, setCreateMatrix, setAddMatrix
+		} = this.props
 		return(
 			<div>
 				<div className="bg-black p2 matrixAddition">
@@ -42,7 +46,7 @@ class LinAlgOne extends React.Component {
 								Enter Matrix Rows:<br/>
 								<select id="rows" 
 										className="matDim"
-										onChange={this.props.setCreateMatrix}>
+										onChange={setCreateMatrix}>
 								 	<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -59,7 +63,7 @@ class LinAlgOne extends React.Component {
 								Enter Matrix Columns:<br/>
 								<select id="cols" 
 										className="matDim"
-										onChange={this.props.setCreateMatrix}>
+										onChange={setCreateMatrix}>
 								 	<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -73,18 +77,18 @@ class LinAlgOne extends React.Component {
 						</div>
 					</div>
 					{
-						(this.props.col) ?
+						(col) ?
 							<div>
 								<div>
-									<Matrix assignID={'mat1'} rows={this.props.row} cols={this.props.col} setCreateMatrix={this.props.setCreateMatrix} />
-									<Matrix assignID={'mat2'} rows={this.props.row} cols={this.props.col} setCreateMatrix={this.props.setCreateMatrix} />
+									<Matrix assignID={'mat1'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
+									<Matrix assignID={'mat2'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
 								</div>
 								<div className="w-100" >
 									<input  type="button"
 									    className="db no-underline near-black bg-animate bg-near-white hover-bg-gray 
 											       inline-flex items-center ma2 tc br2 pa2 submitButton"
 									    value="Submit"
-									    onClick={this.props.setAddMatrix}
+									    onClick={setAddMatrix}
 									/>
 								</div>
 							</div>
@@ -93,16 +97,16 @@ class LinAlgOne extends React.Component {
 					}
 					
 					{
-						(this.props.addMatrix) ? 
-						<AddMatrix 
-							matrix1={this.props.matrixArray1} 
-							matrix2={this.props.matrixArray2}
-						/>
-						:
-						(this.props.col) ?
-						<p>Click submit to compute</p>
-						: 
-						<p>Select the size of the matrices</p>
+						(addMatrix) ? 
+							<AddMatrix 
+								matrix1={matrixArray1} 
+								matrix2={matrixArray2}
+							/>
+							:
+							(col) ?
+							<p>Click submit to compute</p>
+							: 
+							<p>Select the size of the matrices</p>
 					}
 				</div>
 			</div> 
