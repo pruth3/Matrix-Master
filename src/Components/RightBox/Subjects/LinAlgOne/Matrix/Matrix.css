@@ -1,0 +1,17 @@
+.matBox {
+	width: 30px;
+}
+
+.matBorder {
+	border: solid;
+	color: white;
+	border-radius: 20px;
+	border-top: none;
+	border-bottom: none;
+	margin: 20px auto;
+	padding: 7px;
+}
+
+form {
+	display: inline-block;
+}

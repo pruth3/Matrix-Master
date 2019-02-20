@@ -1,0 +1,18 @@
+
+.matrixAddition {
+
+}
+
+.matDim {
+	width: 50px;
+	text-align: center;
+}
+
+.selection {
+	display: inline-block;
+	margin: 10px;
+}
+
+.submitButton {
+	width: 70px;
+}

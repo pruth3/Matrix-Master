@@ -1,0 +1,4 @@
+export const CREATE_MATRIX = 'CREATE_MATRIX';
+export const MODIFY_MATRIX_1 = 'MODIFY_MATRIX';
+export const MODIFY_MATRIX_2 = 'MODIFY_MATRIX_2';
+export const ADD_MATRIX = 'ADD_MATRIX';

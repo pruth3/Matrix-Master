@@ -18,6 +18,7 @@
 }
 
 .left {
+  position: fixed;
   height: 740px;
   border: solid #cdecff;
   float: left; 
