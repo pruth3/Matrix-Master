@@ -42,24 +42,8 @@ class LinAlgOne extends React.Component {
 				<div className="bg-black p2 matrixAddition">
 					<h1 className="center">Matrix Addition </h1>
 					<div>
-						<div className="selection">
-							<p>
-								Enter Matrix Rows:<br/>
-								<MatrixSelect
-									setId={"rows"} 
-									setCreateMatrix={setCreateMatrix}
-								/>
-							</p>
-						</div>
-						<div className="selection">
-							<p>
-								Enter Matrix Columns:<br/>
-								<MatrixSelect
-									setId={"cols"} 
-									setCreateMatrix={setCreateMatrix}
-								/>
-							</p>
-						</div>
+						<MatrixSelect	setId={"rows"}	setCreateMatrix={setCreateMatrix} />
+						<MatrixSelect	setId={"cols"}  setCreateMatrix={setCreateMatrix} />
 					</div>
 					{
 						(col) ?
