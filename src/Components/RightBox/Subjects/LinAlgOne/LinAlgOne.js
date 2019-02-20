@@ -99,7 +99,10 @@ class LinAlgOne extends React.Component {
 							matrix2={this.props.matrixArray2}
 						/>
 						:
+						(this.props.col) ?
 						<p>Click submit to compute</p>
+						: 
+						<p>Select the size of the matrices</p>
 					}
 				</div>
 			</div> 
