@@ -4,7 +4,7 @@ import {
     MODIFY_MATRIX_1, 
     MODIFY_MATRIX_2, 
     ADD_MATRIX
-
+ 
 } from './constants.js'
 
 export const setCreateMatrix = (rows, cols, id, value) => {
@@ -20,8 +20,8 @@ export const setCreateMatrix = (rows, cols, id, value) => {
 		const subID=IDarray.join("");
 		return {
 			type: MODIFY_MATRIX_1, 
-			payload: [subID, value]
-		}
+			payload: [subID, value] 
+		} 
 	}
 	else {
 		let IDarray = id.split("");
@@ -33,7 +33,7 @@ export const setCreateMatrix = (rows, cols, id, value) => {
 		}
 	}
 }
-
+ 
 export const setAddMatrix = () => {
 	return {
 		type: ADD_MATRIX, 
