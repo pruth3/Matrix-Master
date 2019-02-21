@@ -8,6 +8,8 @@ import './LinAlgOne.css';
 //import {Bar} from 'react-chartjs-2';s
 import Matrix from './Matrix/Matrix';
 import AddMatrix from './AddMatrix/AddMatrix';
+import MatrixSelect from './MatrixSelect/MatrixSelect';
+import CalculateButton from './CalculateButton/CalculateButton';
 import {
 	setCreateMatrix, 
 	setAddMatrix
@@ -37,44 +39,11 @@ class LinAlgOne extends React.Component {
 			addMatrix, setCreateMatrix, setAddMatrix
 		} = this.props
 		return(
-			<div>
 				<div className="bg-black p2 matrixAddition">
 					<h1 className="center">Matrix Addition </h1>
 					<div>
-						<div className="selection">
-							<p>
-								Enter Matrix Rows:<br/>
-								<select id="rows" 
-										className="matDim"
-										onChange={setCreateMatrix}>
-								 	<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-								</select>
-							</p>
-						</div>
-						<div className="selection">
-							<p>
-								Enter Matrix Columns:<br/>
-								<select id="cols" 
-										className="matDim"
-										onChange={setCreateMatrix}>
-								 	<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-								</select>
-							</p>
-						</div>
+						<MatrixSelect	setId={"rows"}	setCreateMatrix={setCreateMatrix} />
+						<MatrixSelect	setId={"cols"}  setCreateMatrix={setCreateMatrix} />
 					</div>
 					{
 						(col) ?
@@ -83,33 +52,21 @@ class LinAlgOne extends React.Component {
 									<Matrix assignID={'mat1'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
 									<Matrix assignID={'mat2'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
 								</div>
-								<div className="w-100" >
-									<input  type="button"
-									    className="db no-underline near-black bg-animate bg-near-white hover-bg-gray 
-											       inline-flex items-center ma2 tc br2 pa2 submitButton"
-									    value="Submit"
-									    onClick={setAddMatrix}
-									/>
-								</div>
+								<CalculateButton setAddMatrix={setAddMatrix} />
 							</div>
 						: 
 							<p></p>
 					}
-					
 					{
 						(addMatrix) ? 
-							<AddMatrix 
-								matrix1={matrixArray1} 
-								matrix2={matrixArray2}
+							<AddMatrix matrix1={matrixArray1} matrix2={matrixArray2}
 							/>
-							:
-							(col) ?
+						:(col) ?
 							<p>Click submit to compute</p>
-							: 
+						: 
 							<p>Select the size of the matrices</p>
 					}
 				</div>
-			</div> 
 		);
 	}
 }
