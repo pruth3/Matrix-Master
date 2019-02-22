@@ -7,33 +7,24 @@ import {
  
 } from './constants.js'
 
-export const setCreateMatrix = (rows, cols, id, value) => {
-	if (id==="rows" || id==="cols") {
-		return {
-			type: CREATE_MATRIX, 
-			payload: [rows, cols]
-		}
-	}
-	else if (Number(id.split("")[0]) === 1) {
-		let IDarray = id.split("");
-		IDarray.shift();
-		const subID=IDarray.join("");
-		return {
-			type: MODIFY_MATRIX_1, 
-			payload: [subID, value] 
-		} 
-	}
-	else {
-		let IDarray = id.split("");
-		IDarray.shift();
-		const subID=IDarray.join("");
-		return {
-			type: MODIFY_MATRIX_2, 
-			payload: [subID, value]
-		}
+export const setCreateMatrix = (rows, cols) => {
+	return {
+		type: CREATE_MATRIX, 
+		payload: [rows, cols]
 	}
 }
  
+export const setChangeMatrix = (id, value) => {
+	let IDarray = id.split("").shift();
+	const subID = IDarray.join("");
+	let type = MODIFY_MATRIX_2;
+	if (Number(id.split("")[0])) type = MODIFY_MATRIX_1
+	return {
+		type: type, 
+		payload: [subID, value]
+	}
+}
+
 export const setAddMatrix = () => {
 	return {
 		type: ADD_MATRIX, 

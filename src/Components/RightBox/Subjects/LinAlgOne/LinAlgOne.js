@@ -11,7 +11,8 @@ import AddMatrix from './AddMatrix/AddMatrix';
 import MatrixSelect from './MatrixSelect/MatrixSelect';
 import CalculateButton from './CalculateButton/CalculateButton';
 import {
-	setCreateMatrix, 
+	setCreateMatrix,
+	setChangeMatrix,
 	setAddMatrix
 } from './State/actions';
 
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => { 
  	return {
-		setCreateMatrix: (event) => dispatch(setCreateMatrix(document.getElementById('rows').value, document.getElementById('cols').value, event.target.id, event.target.value)),
+		setCreateMatrix: (event) => dispatch(setCreateMatrix(document.getElementById('rows').value, document.getElementById('cols').value)),
+		setChangeMatrix: (event) => dispatch(setChangeMatrix(event.target.id, event.target.value)),
 		setAddMatrix: () => dispatch(setAddMatrix())
 	}
 }
@@ -36,7 +38,7 @@ class LinAlgOne extends React.Component {
 	render() {
 		const {
 			row, col, matrixArray1, matrixArray2, 
-			addMatrix, setCreateMatrix, setAddMatrix
+			addMatrix, setCreateMatrix, setChangeMatrix, setAddMatrix
 		} = this.props
 		return(
 				<div className="bg-black p2 matrixAddition">
@@ -49,12 +51,12 @@ class LinAlgOne extends React.Component {
 						(col) ?
 							<div> 
 								<div>
-									<Matrix assignID={'mat1'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
-									<Matrix assignID={'mat2'} rows={row} cols={col} setCreateMatrix={setCreateMatrix} />
+									<Matrix assignID={'mat1'} rows={row} cols={col} setChangeMatrix={setChangeMatrix} />
+									<Matrix assignID={'mat2'} rows={row} cols={col} setChangeMatrix={setChangeMatrix} />
 								</div>
 								<CalculateButton setAddMatrix={setAddMatrix} />
 							</div>
-						: 
+						:  
 							<p></p>
 					}
 					{

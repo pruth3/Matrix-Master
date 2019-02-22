@@ -10,7 +10,7 @@ import {
 const currentMatrix = {
 	row: 0, 
 	col: 0, 
-	matrixArray1: [], 
+	matrixArray1: [],  
 	matrixArray2: [], 
 	addMatrix: false
 }
