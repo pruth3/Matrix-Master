@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
   return {
     page: state.newPage.page
   }
-} 
+}  
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -43,20 +43,21 @@ class App extends Component {
         <MMtitle/>
 
         <div className="left bg-blue white b--lightest-blue br3">
-          <MyButton buttonName='Home'             setNewPage={setNewPage}/>
-          <MyButton buttonName='Linear Algebra 1' setNewPage={setNewPage}/>
-          <MyButton buttonName='Linear Algebra 2' setNewPage={setNewPage}/>
-          <MyButton buttonName='Calculus 1'       setNewPage={setNewPage}/>
-          <MyButton buttonName='Calculus 2'       setNewPage={setNewPage}/>
-          <MyButton buttonName='Calculus 3'       setNewPage={setNewPage}/>
-          <MyButton buttonName='Calculus 4'       setNewPage={setNewPage}/>
-          <MyButton buttonName='Statistics'       setNewPage={setNewPage}/>
-          <MyButton buttonName='Mechanics'        setNewPage={setNewPage}/>
-          <MyButton buttonName='Electricity'      setNewPage={setNewPage}/>
-          <MyButton buttonName='Modern Physics'   setNewPage={setNewPage}/>
-          <MyButton buttonName='Programming'      setNewPage={setNewPage}/>
-          <MyButton buttonName='About Us'         setNewPage={setNewPage}/>
-          <MyButton buttonName='Contact Us'       setNewPage={setNewPage}/>
+          <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
+          <MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
+          <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
+          <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
+          <MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
+          <MyButton buttonName='RREF'                     setNewPage={setNewPage}/>
+          <MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
+          <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
+          <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
+          <MyButton buttonName='Area of Parallelepiped'   setNewPage={setNewPage}/>
+          <MyButton buttonName='Diogonalization'          setNewPage={setNewPage}/>
+          <MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Inner Products'           setNewPage={setNewPage}/>
+          <MyButton buttonName='Least Squares'            setNewPage={setNewPage}/>
         </div>
 
         <RightBox page={page}/>

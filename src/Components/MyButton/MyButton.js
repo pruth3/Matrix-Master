@@ -10,7 +10,8 @@ const MyButton = ({buttonName, setNewPage}) => {
 			   onClick={setNewPage}
 			   className="no-underline near-white bg-animate bg-near-black hover-bg-gray 
 					       inline-flex items-center ma2 tc br2 pa2"
-			   value={buttonName}/>
+			   value={buttonName}
+			   style={{fontSize: "12.5px"}}/>
 	);
 }
 
