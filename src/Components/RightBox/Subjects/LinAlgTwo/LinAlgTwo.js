@@ -7,6 +7,12 @@ import {connect} from 'react-redux';
 //eslint-disable-next-line
 import math from 'mathjs';
 
+// const mapStateToProps = (state) => {
+//   	return {
+
+// 	}
+// }
+
 const LinAlgTwo = () => {
 	return(
 		<div>
