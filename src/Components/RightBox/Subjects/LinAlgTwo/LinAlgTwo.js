@@ -19,12 +19,14 @@ import math from 'mathjs';
 // 	}
 // }
 
-const LinAlgTwo = () => {
-	return(
-		<div>
-			<p>LinAlgTwo</p>
-		</div> 
-	); 
+class LinAlgTwo extends React.Component {
+	render(){
+		return(
+			<div>
+				<p>LinAlgTwo</p>
+			</div> 
+		); 	
+	}
 }
 
 export default LinAlgTwo;
