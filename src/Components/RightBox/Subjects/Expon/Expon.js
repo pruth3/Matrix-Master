@@ -1,14 +1,15 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './AboutUs.css';
+import './Expon.css'
 
-const AboutUs = () => {
+const Expon = () => {
 	return(
 		<div>
-			<p>AboutUs</p>
+			<p>Expon
+		</p>
 		</div> 
 	); 
 }
 
-export default AboutUs;
+export default Expon; 

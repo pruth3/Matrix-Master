@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Stats.css'
+import './AreaPiped.css'
 
-const Stats = () => {
+const AreaPiped = () => {
 	return(
 		<div>
-			<p>Stats</p>
+			<p>AreaPiped</p>
 		</div> 
 	); 
 }
 
-export default Stats;
+export default AreaPiped; 

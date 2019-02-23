@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './CalcThree.css'
+import './Diag.css'
 
-const CalcThree = () => {
+const Diag = () => {
 	return(
 		<div>
-			<p>CalcThree</p>
+			<p>Diag</p>
 		</div> 
 	); 
 }
 
-export default CalcThree; 
+export default Diag; 

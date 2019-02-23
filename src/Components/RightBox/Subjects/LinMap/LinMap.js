@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './CalcFour.css'
+import './LinMap.css'
 
-const CalcFour = () => {
+const LinMap = () => {
 	return(
 		<div>
-			<p>CalcFour</p>
+			<p>LinMap</p>
 		</div> 
 	); 
 }
 
-export default CalcFour; 
+export default LinMap; 

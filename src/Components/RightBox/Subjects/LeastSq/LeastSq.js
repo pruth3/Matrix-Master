@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Contact.css'
+import './LeastSq.css'
 
-const Contact = () => {
+const LeastSq = () => {
 	return(
 		<div>
-			<p>Contact</p>
+			<p>LeastSq</p>
 		</div> 
 	); 
 }
 
-export default Contact; 
+export default LeastSq; 

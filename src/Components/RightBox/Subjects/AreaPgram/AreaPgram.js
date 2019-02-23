@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Electricity.css'
+import './AreaPgram.css'
 
-const Electricity = () => {
+const AreaPgram = () => {
 	return(
 		<div>
-			<p>Electricity</p>
+			<p>AreaPgram</p>
 		</div> 
 	); 
 }
 
-export default Electricity; 
+export default AreaPgram; 

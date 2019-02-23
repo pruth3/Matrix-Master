@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './CalcOne.css'
+import './Det.css'
 
-const CalcOne = () => {
+const Det = () => {
 	return(
 		<div>
-			<p>CalcOne</p>
+			<p>Det</p>
 		</div> 
 	); 
 }
 
-export default CalcOne; 
+export default Det; 

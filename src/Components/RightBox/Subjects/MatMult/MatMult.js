@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './CalcTwo.css'
+import './MatMult.css'
 
-const CalcTwo = () => {
+const MatMult = () => {
 	return(
 		<div>
-			<p>CalcTwo</p>
+			<p>MatMult</p>
 		</div> 
 	); 
 }
 
-export default CalcTwo; 
+export default MatMult; 

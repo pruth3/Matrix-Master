@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import tachyons from 'tachyons';
 //eslint-disable-next-line 
 import math from 'mathjs';
-import './LinAlgOne.css';
+import './MatAdd.css';
 //import {Bar} from 'react-chartjs-2';s
 import Matrix from './Matrix/Matrix';
 import AddMatrix from './AddMatrix/AddMatrix';
@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-class LinAlgOne extends React.Component {
+class MatAdd extends React.Component {
 	render() {
 		const {
 			row, col, matrixArray1, matrixArray2, 
@@ -72,7 +72,7 @@ class LinAlgOne extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LinAlgOne); 
+export default connect(mapStateToProps, mapDispatchToProps)(MatAdd); 
 
 
 

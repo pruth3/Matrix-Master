@@ -1,15 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Mechanics.css'
+import './InProd.css'
 
-const Mechanics = () => {
+const InProd = () => {
 	return(
 		<div>
-			<p>Mechanics
-		</p>
+			<p>InProd</p>
 		</div> 
 	); 
 }
 
-export default Mechanics; 
+export default InProd;

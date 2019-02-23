@@ -1,15 +1,15 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Programming.css'
+import './Transpose.css'
 
-const Programming = () => {
+const Transpose = () => {
 	return(
 		<div>
-			<p>Programming
+			<p>Transpose
 		</p>
 		</div> 
 	); 
 }
 
-export default Programming; 
+export default Transpose; 

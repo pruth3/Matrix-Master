@@ -1,14 +1,14 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Modern.css'
+import './Inverse.css'
 
-const Modern = () => {
+const Inverse = () => {
 	return(
 		<div>
-			<p>Modern</p>
+			<p>Inverse</p>
 		</div> 
 	); 
 }
 
-export default Modern; 
+export default Inverse; 

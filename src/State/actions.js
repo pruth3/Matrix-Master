@@ -7,20 +7,21 @@ import {
 export const setNewPage = (text) => {
 	let livePage = 'Home'; 
     switch(text) {
-      case 'Home' : livePage='Home'; break;
-      case 'Linear Algebra 1' : livePage='LinAlgOne'; break;
-      case 'Linear Algebra 2' : livePage='LinAlgTwo'; break;
-      case 'Calculus 1' : livePage='CalcOne'; break;
-      case 'Calculus 2' : livePage='CalcTwo'; break;
-      case 'Calculus 3' : livePage='CalcThree'; break;
-      case 'Calculus 4' : livePage='CalcFour'; break;
-      case 'Statistics' : livePage='Stats'; break;
-      case 'Mechanics' : livePage='Mechanics'; break;
-      case 'Electricity' : livePage='Electricity'; break;
-      case 'Modern Physics' : livePage='Modern'; break;
-      case 'Programming' : livePage='Programming'; break;
-      case 'About Us' : livePage='AboutUs'; break;
-      case 'Contact Us' : livePage='Contact'; break;
+      case 'Home' :                     livePage='Home'; break;
+      case 'Matrix Addition' :          livePage='MatAdd'; break;
+      case 'Scalar Multiplication' :    livePage='ScaMult'; break;
+      case 'Transpose' :                livePage='Transpose'; break;
+      case 'Matrix Multiplication' :    livePage='MatMult'; break;
+      case 'RREF' :                     livePage='RREF'; break;
+      case 'Linear Mapping' :           livePage='LinMap'; break;
+      case 'Inverse' :                  livePage='Inverse'; break;
+      case 'Determinant' :              livePage='Det'; break;
+      case 'Area of Parallelogram' :    livePage='AreaPgram'; break;
+      case 'Area of Parallelepiped' :   livePage='AreaPiped'; break;
+      case 'Diogonalization' :          livePage='Diag'; break;
+      case 'Exponential' :              livePage='Expon'; break;
+      case 'Inner Products' :           livePage='InProd'; break;
+      case 'Least Squares' :            livePage='LeastSq'; break;
       default: livePage='Home';
     }
 	return {

@@ -1,7 +1,7 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './LinAlgTwo.css'
+import './ScaMult.css'
 //eslint-disable-next-line
 import {connect} from 'react-redux';
 //eslint-disable-next-line
@@ -19,14 +19,14 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-class LinAlgTwo extends React.Component {
+class ScaMult extends React.Component {
 	render() {
 		return(
 			<div>
-				<p>LinAlgTwo</p>
+				<p>ScaMult</p>
 			</div> 
 		);
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LinAlgTwo);
+export default connect(mapStateToProps, mapDispatchToProps)(ScaMult);
