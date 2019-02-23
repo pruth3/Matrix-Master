@@ -13,6 +13,12 @@ import math from 'mathjs';
 // 	}
 // }
 
+// const mapDispatchToProps = (dispatch) => { 
+//  	return {
+
+// 	}
+// }
+
 const LinAlgTwo = () => {
 	return(
 		<div>
