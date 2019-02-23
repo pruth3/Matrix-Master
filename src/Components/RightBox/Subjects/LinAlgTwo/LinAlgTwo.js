@@ -25,7 +25,7 @@ class LinAlgTwo extends React.Component {
 			<div>
 				<p>LinAlgTwo</p>
 			</div> 
-		); 	
+		);
 	}
 }
 

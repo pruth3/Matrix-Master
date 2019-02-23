@@ -30,5 +30,5 @@ export const setAddMatrix = () => {
 	return {
 		type: ADD_MATRIX, 
 		payload: true
-	}
+	} 
 } 
