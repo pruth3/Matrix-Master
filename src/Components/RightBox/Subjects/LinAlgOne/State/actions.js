@@ -15,10 +15,11 @@ export const setCreateMatrix = (rows, cols) => {
 }
  
 export const setChangeMatrix = (id, value) => {
-	let IDarray = id.split("").shift();
+	let IDarray = id.split("")
+	IDarray.shift();
 	const subID = IDarray.join("");
-	let type = MODIFY_MATRIX_2;
-	if (Number(id.split("")[0])) type = MODIFY_MATRIX_1
+	var type = MODIFY_MATRIX_2
+	if (Number(id.split("")[0]) === 1) type = MODIFY_MATRIX_1
 	return {
 		type: type, 
 		payload: [subID, value]
@@ -30,4 +31,4 @@ export const setAddMatrix = () => {
 		type: ADD_MATRIX, 
 		payload: true
 	}
-}
+} 

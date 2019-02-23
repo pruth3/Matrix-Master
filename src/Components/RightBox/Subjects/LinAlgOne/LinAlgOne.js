@@ -47,7 +47,7 @@ class LinAlgOne extends React.Component {
 						<MatrixSelect	setId={"rows"}	setCreateMatrix={setCreateMatrix} />
 						<MatrixSelect	setId={"cols"}  setCreateMatrix={setCreateMatrix} />
 					</div>
-					{
+					{ 
 						(col) ?
 							<div> 
 								<div>

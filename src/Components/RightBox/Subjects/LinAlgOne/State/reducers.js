@@ -52,6 +52,7 @@ const modifyArray = (id, value, currArray) => {
 }
 
 const createMatrix = (state={currentMatrix}, action={}) => {
+	console.log(action.type)
 	switch (action.type) {
 		case CREATE_MATRIX:
 			return Object.assign({}, state, {row: action.payload[0], 
