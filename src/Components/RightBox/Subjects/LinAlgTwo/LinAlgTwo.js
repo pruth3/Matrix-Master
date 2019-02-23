@@ -7,20 +7,20 @@ import {connect} from 'react-redux';
 //eslint-disable-next-line
 import math from 'mathjs';
 
-// const mapStateToProps = (state) => {
-//   	return {
+const mapStateToProps = (state) => {
+  	return {
 
-// 	}
-// }
+	}
+}
 
-// const mapDispatchToProps = (dispatch) => { 
-//  	return {
+const mapDispatchToProps = (dispatch) => { 
+ 	return {
 
-// 	}
-// }
+	}
+}
 
 class LinAlgTwo extends React.Component {
-	render(){
+	render() {
 		return(
 			<div>
 				<p>LinAlgTwo</p>
@@ -29,4 +29,4 @@ class LinAlgTwo extends React.Component {
 	}
 }
 
-export default LinAlgTwo;
+export default connect(mapStateToProps, mapDispatchToProps)(LinAlgTwo);
