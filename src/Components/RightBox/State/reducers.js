@@ -3,7 +3,6 @@ import {
 	MODIFY_MATRIX_1, 
 	MODIFY_MATRIX_2, 
 	ADD_MATRIX
-
 } from '../Subjects/MatAdd/State/constants.js'
 
 const currentMatrix = {
