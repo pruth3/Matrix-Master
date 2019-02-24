@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import {newPage} from './State/reducers';
-import createMatrix from './Components/RightBox/Subjects/LinAlgOne/State/reducers'
+import {createMatrix} from './Components/RightBox/State/reducers'
 
 const logger = createLogger();
 
@@ -29,4 +29,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.register();ß

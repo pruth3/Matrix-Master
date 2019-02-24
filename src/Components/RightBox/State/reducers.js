@@ -5,7 +5,7 @@ import {
 	MODIFY_MATRIX_2, 
 	ADD_MATRIX
 
-} from './constants.js'
+} from '../Subjects/MatAdd/State/constants.js'
 
 const currentMatrix = {
 	row: 0, 
@@ -51,30 +51,51 @@ const modifyArray = (id, value, currArray) => {
 	return currArray
 }
 
-const createMatrix = (state={currentMatrix}, action={}) => {
+export const createMatrix = (state={currentMatrix}, action={}) => {
 	console.log(action.type)
 	switch (action.type) {
 		case CREATE_MATRIX:
-			return Object.assign({}, state, {row: action.payload[0], 
-											 col: action.payload[1],
-											 matrixArray1: createArray(action.payload[0], action.payload[1]),
-											 matrixArray2: createArray(action.payload[0], action.payload[1]),
-											 addMatrix: false })
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					row: action.payload[0], 
+					 col: action.payload[1],
+					 matrixArray1: createArray(action.payload[0], action.payload[1]),
+					 matrixArray2: createArray(action.payload[0], action.payload[1]),
+					 addMatrix: false 
+				}
+			)
 		case MODIFY_MATRIX_1: 
-			return Object.assign({}, state, {matrixArray1: modifyArray(action.payload[0], action.payload[1], state.matrixArray1), 
-											 addMatrix: false})
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					matrixArray1: modifyArray(action.payload[0], action.payload[1], state.matrixArray1), 
+					addMatrix: false
+				}
+			)
 
 		case MODIFY_MATRIX_2: 
-			return Object.assign({}, state, {matrixArray2: modifyArray(action.payload[0], action.payload[1], state.matrixArray2),
-											 addMatrix: false})
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					matrixArray2: modifyArray(action.payload[0], action.payload[1], state.matrixArray2),
+					addMatrix: false
+				}
+			)
 
 		case ADD_MATRIX: 
-			return Object.assign({}, state, {addMatrix: true})
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					addMatrix: true
+				}
+			)
 
 		default: 
 			return state
 	}
 }
-
-export default createMatrix;
-
