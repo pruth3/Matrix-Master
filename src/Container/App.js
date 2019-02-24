@@ -35,7 +35,10 @@ const particlesOptions = {
 
 class App extends Component {
   render() {
-    const {setNewPage, page} = this.props;
+    const {
+      setNewPage, 
+      page
+    } = this.props;
     return (
       <div className='App'>
         <Particles className='particles' params={particlesOptions}/>
