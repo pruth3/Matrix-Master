@@ -1,7 +1,5 @@
 import { 
-
     CHANGE_PAGE
-
 } from './constants.js'
 
 export const setNewPage = (text) => {
