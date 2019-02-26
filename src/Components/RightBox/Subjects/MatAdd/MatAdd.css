@@ -16,3 +16,13 @@
 .submitButton {
 	width: 87.5px;
 }
+
+.container {
+	vertical-align: middle;
+}
+
+.symbol {
+	width: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
