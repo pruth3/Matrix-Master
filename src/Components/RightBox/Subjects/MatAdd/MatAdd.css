@@ -1,8 +1,3 @@
-
-.matrixAddition {
-
-}
-
 .matDim {
 	width: 50px;
 	text-align: center;
@@ -15,10 +10,6 @@
 
 .submitButton {
 	width: 87.5px;
-}
-
-.container {
-	vertical-align: middle;
 }
 
 .symbol {
