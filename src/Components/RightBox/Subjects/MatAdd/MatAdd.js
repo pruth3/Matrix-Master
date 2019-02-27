@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons'; 
-//eslint-disable-next-line 
-import math from 'mathjs';
 import './MatAdd.css';
 //import {Bar} from 'react-chartjs-2';s
 import Matrix from '../../Reusable/Matrix/Matrix';
