@@ -2,7 +2,7 @@ import React from 'react';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './AddMatrix.css';
-import '../Matrix/Matrix.css'
+//import './../../Matrix/Matrix.css'
 import math from 'mathjs';
 
 const subItems = (row) => {
