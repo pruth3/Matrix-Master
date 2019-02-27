@@ -1,15 +1,15 @@
 import React from 'react'; 
 import {connect} from 'react-redux';
 //eslint-disable-next-line
-import tachyons from 'tachyons';
+import tachyons from 'tachyons'; 
 //eslint-disable-next-line 
 import math from 'mathjs';
 import './MatAdd.css';
 //import {Bar} from 'react-chartjs-2';s
-import Matrix from './Matrix/Matrix';
+import Matrix from '.././Reusable/Matrix/Matrix';
 import AddMatrix from './AddMatrix/AddMatrix';
-import MatrixSelect from './MatrixSelect/MatrixSelect';
-import CalculateButton from './CalculateButton/CalculateButton';
+import MatrixSelect from '.././Reusable/MatrixSelect/MatrixSelect';
+import CalculateButton from '.././Reusable/CalculateButton/CalculateButton';
 import {
 	setCreateMatrix,
 	setChangeMatrix,
@@ -41,7 +41,7 @@ class MatAdd extends React.Component {
 			addMatrix, setCreateMatrix, setChangeMatrix, setAddMatrix
 		} = this.props
 		return(
-				<div className="bg-black p2 matrixAddition">
+				<div className="bg-black p2">
 					<h1 className="center">Matrix Addition </h1>
 					<div> 
 						<MatrixSelect	setId={"rows"}	setCreateMatrix={setCreateMatrix} />

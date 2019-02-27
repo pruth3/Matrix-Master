@@ -22,8 +22,8 @@ const mapDispatchToProps = (dispatch) => {
 class ScaMult extends React.Component {
 	render() {
 		return(
-			<div>
-				<p>ScaMult</p>
+			<div className="bg-black p2">
+				<h1 className="center">Scalar Multiplication</h1>
 			</div> 
 		);
 	}
