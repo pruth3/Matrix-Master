@@ -1,1 +1,1 @@
- 
+ export const CREATE_MATRIX_SCA_MULT = 'CREATE_MATRIX_SCA_MULT';
