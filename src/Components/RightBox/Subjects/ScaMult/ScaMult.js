@@ -4,10 +4,8 @@ import tachyons from 'tachyons';
 import './ScaMult.css'
 //eslint-disable-next-line
 import {connect} from 'react-redux';
-//eslint-disable-next-line
-import math from 'mathjs';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { 
   	return {
 
 	}
