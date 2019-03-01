@@ -5,12 +5,18 @@ import {
 	ADD_MATRIX
 } from '../Subjects/MatAdd/State/constants.js'
 
+import {
+	CREATE_MATRIX_SCA_MULT
+} from '../Subjects/ScaMult/State/constants.js'
+
 const currentMatrix = {
 	row: 0, 
 	col: 0, 
 	matrixArray1: [],  
 	matrixArray2: [], 
-	addMatrix: false
+	addMatrix: false, 
+	ScaMultRows: 0, 
+	ScaMultCols: 0
 }
 
 const resetValues = () => {
@@ -58,10 +64,10 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				state, 
 				{
 					row: action.payload[0], 
-					 col: action.payload[1],
-					 matrixArray1: createArray(action.payload[0], action.payload[1]),
-					 matrixArray2: createArray(action.payload[0], action.payload[1]),
-					 addMatrix: false 
+					col: action.payload[1],
+					matrixArray1: createArray(action.payload[0], action.payload[1]),
+					matrixArray2: createArray(action.payload[0], action.payload[1]),
+					addMatrix: false 
 				}
 			)
 		case MODIFY_MATRIX_1: 
@@ -90,6 +96,16 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				state, 
 				{
 					addMatrix: true
+				}
+			)
+
+		case CREATE_MATRIX_SCA_MULT:
+			return Object.assign(
+				{},
+				state, 
+				{
+					ScaMultRows: action.payload[0], 
+					ScaMultCols: action.payload[1]
 				}
 			)
 
