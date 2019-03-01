@@ -8,7 +8,7 @@ import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 // import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import {
-	setCreateMatrix,
+	setCreateSM,
 } from './State/actions';
 
 const mapStateToProps = (state) => { 
@@ -20,8 +20,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => { 
  	return {
- 		setCreateMatrix: (event) => dispatch(
- 			setCreateMatrix(
+ 		setCreateSM: (event) => dispatch(
+ 			setCreateSM(
  				document.getElementById('RowsSM').value, 
  				document.getElementById('ColsSM').value
  			)
@@ -36,8 +36,8 @@ class ScaMult extends React.Component {
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
 				<div> 
-					<MatrixSelect	setId={"RowsSM"}  setCreateMatrix={setCreateMatrix} />
-					<MatrixSelect	setId={"ColsSM"}  setCreateMatrix={setCreateMatrix} />
+					<MatrixSelect	setId={"RowsSM"}  setCreateMatrix={setCreateSM} />
+					<MatrixSelect	setId={"ColsSM"}  setCreateMatrix={setCreateSM} />
 				</div>
 				{ 
 					(col) ?
