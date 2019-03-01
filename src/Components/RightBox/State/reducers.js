@@ -16,7 +16,8 @@ const currentMatrix = {
 	matrixArray2: [], 
 	addMatrix: false, 
 	ScaMultRows: 0, 
-	ScaMultCols: 0
+	ScaMultCols: 0,
+	ScaMultMatrixArray: []
 }
 
 const resetValues = () => {
@@ -105,7 +106,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				state, 
 				{
 					ScaMultRows: action.payload[0], 
-					ScaMultCols: action.payload[1]
+					ScaMultCols: action.payload[1], 
+					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1])
 				}
 			)
 
