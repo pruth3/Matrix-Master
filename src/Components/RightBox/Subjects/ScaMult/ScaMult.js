@@ -13,7 +13,8 @@ import {
 
 const mapStateToProps = (state) => { 
   	return {
-
+  		row: state.createMatrix.ScaMultRows, 
+  		col: state.createMatrix.ScaMultCols
 	}
 }
 
@@ -37,4 +38,4 @@ class ScaMult extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScaMult); 
+export default connect(mapStateToProps, mapDispatchToProps)(ScaMult);  
