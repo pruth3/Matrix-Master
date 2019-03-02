@@ -9,6 +9,10 @@ import {
 	CREATE_MATRIX_SCA_MULT
 } from '../Subjects/ScaMult/State/constants.js'
 
+import {
+	RESET_ALL_PAGES
+} from '../../../State/constants.js'
+
 const currentMatrix = {
 	row: 0, 
 	col: 0, 
@@ -20,22 +24,22 @@ const currentMatrix = {
 	ScaMultMatrixArray: []
 }
 
-const resetValues = () => {
+const resetValues = (matrixNumber) => {
 	// this assumes an 8x8 matrix is the largest 
 	for (var i = 0; i < 8; ++i) {
 		for (var j = 0; j < 8; ++j) {
 			const strI = i.toString();
 			const strJ = j.toString();
-			if (document.getElementById('1'+strI+strJ)) {
-				document.getElementById('1'+strI+strJ).value = '';
-				document.getElementById('2'+strI+strJ).value = '';
+			if (document.getElementById(matrixNumber+strI+strJ)) {
+				document.getElementById(matrixNumber+strI+strJ).value = '';
+				document.getElementById(matrixNumber+strI+strJ).value = '';
 			}
 		}
 	}
 }
 
-const createArray = (row, col) => {
-	resetValues();
+const createArray = (row, col, matrixNumber) => {
+	resetValues(matrixNumber);
 	var lst = [];
 	for (let i = 0; i < row; ++i) {
 		var subLst = [];
@@ -66,8 +70,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				{
 					row: action.payload[0], 
 					col: action.payload[1],
-					matrixArray1: createArray(action.payload[0], action.payload[1]),
-					matrixArray2: createArray(action.payload[0], action.payload[1]),
+					matrixArray1: createArray(action.payload[0], action.payload[1], "1"),
+					matrixArray2: createArray(action.payload[0], action.payload[1], "2"),
 					addMatrix: false 
 				}
 			)
@@ -107,7 +111,23 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				{
 					ScaMultRows: action.payload[0], 
 					ScaMultCols: action.payload[1], 
-					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1])
+					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1], "3")
+				}
+			)
+
+		case RESET_ALL_PAGES: 
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					row: 0, 
+					col: 0, 
+					matrixArray1: [],  
+					matrixArray2: [], 
+					addMatrix: false, 
+					ScaMultRows: 0, 
+					ScaMultCols: 0,
+					ScaMultMatrixArray: []
 				}
 			)
 

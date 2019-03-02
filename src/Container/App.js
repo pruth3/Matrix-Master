@@ -11,13 +11,17 @@ import {setNewPage} from '../State/actions';
 
 const mapStateToProps = (state) => { 
   return {
-    page: state.newPage.page
+    page: state.newPage.page 
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setNewPage: (event) => dispatch(setNewPage(event.target.value))
+    setNewPage: (event) => dispatch(
+      setNewPage(
+        event.target.value
+      )
+    )
   }
 }
 

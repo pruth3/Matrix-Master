@@ -1,5 +1,6 @@
 import { 
-    CHANGE_PAGE
+    CHANGE_PAGE,
+    //RESET_ALL_PAGES
 } from './constants.js'
 
 export const setNewPage = (text) => {

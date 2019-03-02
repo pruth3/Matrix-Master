@@ -7,13 +7,9 @@ const Matrix = ({assignID, rows, cols, setChangeMatrix}) => {
 
 	const subItems = (i, cols) => {
 		let td = [];
-		var matNum = 1;
-		if (assignID==='mat2') {
-			matNum = 2; 
-		}
-
+		var matNum = assignID.substr(-1)
 		for (var j=0; j<cols; ++j) {
-			let stringCoord = matNum.toString() + i.toString() + j.toString();
+			let stringCoord = matNum + i.toString() + j.toString();
 			td.push(
 				<td>
 					<input id={stringCoord} defaultValue="" className="matBox" onChange={setChangeMatrix} />
