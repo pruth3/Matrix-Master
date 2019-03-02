@@ -5,15 +5,17 @@ import tachyons from 'tachyons';
 import './ScaMult.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
-// import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
+import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import {
 	setCreateSM,
+	setScaMultMatrix
 } from './State/actions';
 
 const mapStateToProps = (state) => { 
   	return {
   		ScaMultRows: state.createMatrix.ScaMultRows, 
-  		ScaMultCols: state.createMatrix.ScaMultCols
+  		ScaMultCols: state.createMatrix.ScaMultCols, 
+  		ScaMultMatrix: state.createMatrix.ScaMultMatrix
 	}
 }
 
@@ -24,13 +26,14 @@ const mapDispatchToProps = (dispatch) => {
  				document.getElementById('RowsSM').value, 
  				document.getElementById('ColsSM').value
  			)
- 		)
+ 		),
+ 		setScaMultMatrix: () => dispatch(setScaMultMatrix())
 	}
 }
 
 class ScaMult extends React.Component {
 	render() {
-		const {ScaMultRows, ScaMultCols, setCreateSM} = this.props;
+		const {ScaMultRows, ScaMultCols, setCreateSM, ScaMultMatrix} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
@@ -44,9 +47,18 @@ class ScaMult extends React.Component {
 							<div>
 								<Matrix assignID={'mat3'} rows={ScaMultRows} cols={ScaMultCols} />
 							</div>
+							<CalculateButton setAddMatrix={setScaMultMatrix} />
 						</div>
 					:  
 						<p></p>
+				}
+				{
+					(ScaMultMatrix) ? 
+						<p>Show solution here</p>
+					:(ScaMultRows) ?
+						<p>Click submit to compute</p>
+					: 
+						<p>Select the size of the matrices</p>
 				}
 			</div> 
 		);
@@ -54,3 +66,16 @@ class ScaMult extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ScaMult);  
+
+
+
+
+
+
+
+
+
+
+
+
+

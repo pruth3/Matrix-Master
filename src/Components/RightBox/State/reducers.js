@@ -6,7 +6,8 @@ import {
 } from '../Subjects/MatAdd/State/constants.js'
 
 import {
-	CREATE_MATRIX_SCA_MULT
+	CREATE_MATRIX_SCA_MULT, 
+	SCA_MULT_MATRIX
 } from '../Subjects/ScaMult/State/constants.js'
 
 import {
@@ -21,7 +22,8 @@ const currentMatrix = {
 	addMatrix: false, 
 	ScaMultRows: 0, 
 	ScaMultCols: 0,
-	ScaMultMatrixArray: []
+	ScaMultMatrixArray: [], 
+	ScaMultMatrix: false
 }
 
 const resetValues = (matrixNumber) => {
@@ -128,6 +130,14 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					ScaMultRows: 0, 
 					ScaMultCols: 0,
 					ScaMultMatrixArray: []
+				}
+			)
+		case SCA_MULT_MATRIX: 
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					ScaMultMatrix: true
 				}
 			)
 
