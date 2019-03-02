@@ -117,7 +117,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				}
 			)
 
-		case RESET_ALL_PAGES: 
+		case RESET_ALL_PAGES: // this still has to be configured
 			return Object.assign(
 				{}, 
 				state, 

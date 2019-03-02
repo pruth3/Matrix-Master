@@ -27,13 +27,15 @@ const mapDispatchToProps = (dispatch) => {
  				document.getElementById('ColsSM').value
  			)
  		),
- 		setScaMultMatrix: () => dispatch(setScaMultMatrix())
+ 		setScaMultMatrix: () => dispatch(
+ 			setScaMultMatrix()
+ 		)
 	}
 }
 
 class ScaMult extends React.Component {
 	render() {
-		const {ScaMultRows, ScaMultCols, setCreateSM, ScaMultMatrix} = this.props;
+		const {ScaMultRows, ScaMultCols, setCreateSM, ScaMultMatrix, setScaMultMatrix} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
