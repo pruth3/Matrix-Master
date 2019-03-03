@@ -56,7 +56,7 @@ class ScaMult extends React.Component {
 				}
 				{
 					(ScaMultMatrix) ? 
-						<p>Show solution here</p>
+						<p></p>
 					:(ScaMultRows) ?
 						<p>Click submit to compute</p>
 					: 
