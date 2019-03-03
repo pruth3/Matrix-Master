@@ -7,7 +7,9 @@ import {
 
 import {
 	CREATE_MATRIX_SCA_MULT, 
-	SCA_MULT_MATRIX
+	SCA_MULT_MATRIX, 
+	MODIFY_SM_MATRIX, 
+	MODIFY_SCALE_VALUE
 } from '../Subjects/ScaMult/State/constants.js'
 
 import {
@@ -23,7 +25,8 @@ const currentMatrix = {
 	ScaMultRows: 0, 
 	ScaMultCols: 0,
 	ScaMultMatrixArray: [], 
-	ScaMultMatrix: false
+	ScaMultMatrix: false, 
+	ScaleValue: 1
 }
 
 const resetValues = (matrixNumber) => {
@@ -54,6 +57,7 @@ const createArray = (row, col, matrixNumber) => {
 }
 
 const modifyArray = (id, value, currArray) => {
+	console.log(id, value, currArray)
 	let idArr = id.split(""); 
 	let i = Number(idArr[0]);
 	let j = Number(idArr[1]);
@@ -138,6 +142,24 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				state, 
 				{
 					ScaMultMatrix: true
+				}
+			)
+		case MODIFY_SM_MATRIX: 
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					ScaMultMatrixArray: modifyArray(action.payload[0], action.payload[1], state.ScaMultMatrixArray), 
+					ScaMultMatrix: false
+				}
+			)
+		case MODIFY_SCALE_VALUE: 
+			return Object.assign(
+				{}, 
+				state, 
+				{
+					ScaleValue: action.payload, 
+					ScaMultMatrix: false
 				}
 			)
 
