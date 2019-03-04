@@ -7,7 +7,7 @@ import math from 'mathjs';
 
 const MatrixSM = ({scale, matrix}) => {
 	return(
-
+		
 	)
 }
 

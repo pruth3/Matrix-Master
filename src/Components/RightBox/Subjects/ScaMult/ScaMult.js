@@ -12,6 +12,7 @@ import {
 	setChangeMatrixSM, 
 	setScaleValue
 } from './State/actions';
+import math from 'mathjs';
 
 const mapStateToProps = (state) => { 
   	return {
@@ -72,7 +73,7 @@ class ScaMult extends React.Component {
 				}
 				{
 					(ScaMultMatrix) ? 
-						<p>{ScaleValue}, {ScaMultMatrixArray}</p>
+						<p>{math.multiply(ScaleValue, ScaMultMatrixArray)}</p>
 						//<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
 					:(ScaMultRows) ?
 						<p>Click submit to compute</p>
