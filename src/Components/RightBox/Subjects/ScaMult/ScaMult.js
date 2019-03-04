@@ -6,13 +6,13 @@ import './ScaMult.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
+import MatrixSM from './MatrixSM/MatrixSM'
 import {
 	setCreateSM,
 	setScaMultMatrix, 
 	setChangeMatrixSM, 
 	setScaleValue
 } from './State/actions';
-import math from 'mathjs';
 
 const mapStateToProps = (state) => { 
   	return {
@@ -73,8 +73,8 @@ class ScaMult extends React.Component {
 				}
 				{
 					(ScaMultMatrix) ? 
-						<p>{math.multiply(ScaleValue, ScaMultMatrixArray)}</p>
-						//<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
+						//<p>{math.multiply(ScaleValue, ScaMultMatrixArray)}</p>
+						<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
 					:(ScaMultRows) ?
 						<p>Click submit to compute</p>
 					: 
