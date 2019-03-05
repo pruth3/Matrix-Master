@@ -13,7 +13,7 @@ import {
 } from '../Subjects/ScaMult/State/constants.js'
 
 import {
-	RESET_ALL_PAGES
+	//RESET_ALL_PAGES
 } from '../../../State/constants.js'
 
 const currentMatrix = {
@@ -41,6 +41,9 @@ const resetValues = (matrixNumber) => {
 			}
 		}
 	}
+	if (matrixNumber === '3' && document.getElementById('scaleInput')) {
+		document.getElementById('scaleInput').value = '';
+	}
 }
 
 const createArray = (row, col, matrixNumber) => {
@@ -57,7 +60,6 @@ const createArray = (row, col, matrixNumber) => {
 }
 
 const modifyArray = (id, value, currArray) => {
-	console.log(id, value, currArray)
 	let idArr = id.split(""); 
 	let i = Number(idArr[0]);
 	let j = Number(idArr[1]);
@@ -117,25 +119,26 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				{
 					ScaMultRows: action.payload[0], 
 					ScaMultCols: action.payload[1], 
-					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1], "3")
+					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1], "3"),
+					ScaleValue: 1
 				}
 			)
 
-		case RESET_ALL_PAGES: // this still has to be configured
-			return Object.assign(
-				{}, 
-				state, 
-				{
-					row: 0, 
-					col: 0, 
-					matrixArray1: [],  
-					matrixArray2: [], 
-					addMatrix: false, 
-					ScaMultRows: 0, 
-					ScaMultCols: 0,
-					ScaMultMatrixArray: []
-				}
-			)
+		// case RESET_ALL_PAGES: // this still has to be configured
+		// 	return Object.assign(
+		// 		{}, 
+		// 		state, 
+		// 		{
+		// 			row: 0, 
+		// 			col: 0, 
+		// 			matrixArray1: [],  
+		// 			matrixArray2: [], 
+		// 			addMatrix: false, 
+		// 			ScaMultRows: 0, 
+		// 			ScaMultCols: 0,
+		// 			ScaMultMatrixArray: []
+		// 		}
+		// 	)
 		case SCA_MULT_MATRIX: 
 			return Object.assign(
 				{}, 
