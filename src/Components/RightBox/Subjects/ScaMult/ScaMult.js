@@ -73,7 +73,6 @@ class ScaMult extends React.Component {
 				}
 				{
 					(ScaMultMatrix) ? 
-						//<p>{math.multiply(ScaleValue, ScaMultMatrixArray)}</p>
 						<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
 					:(ScaMultRows) ?
 						<p>Click submit to compute</p>

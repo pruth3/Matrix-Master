@@ -24,6 +24,7 @@ const items = (matrix) => {
 }
 
 const MatrixSM = ({scale, matrix}) => {
+	if (!scale) scale = 1;
 	const solvedMatrix = math.multiply(scale, matrix);
 	return(
 		<form className="black-80 w-40 ">
