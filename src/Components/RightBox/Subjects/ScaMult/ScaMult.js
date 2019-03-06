@@ -17,10 +17,10 @@ import {
 const mapStateToProps = (state) => { 
   	return {
   		rows: state.createMatrix.ScaMultRows, 
-  		ScaMultCols: state.createMatrix.ScaMultCols, 
-  		ScaMultMatrixArray: state.createMatrix.ScaMultMatrixArray,
-  		ScaMultMatrix: state.createMatrix.ScaMultMatrix, 
-  		ScaleValue: state.createMatrix.ScaleValue
+  		cols: state.createMatrix.ScaMultCols, 
+  		matrixArray: state.createMatrix.ScaMultMatrixArray,
+  		solve: state.createMatrix.ScaMultMatrix, 
+  		scale: state.createMatrix.ScaleValue
 	}
 }
 
@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch) => {
  				document.getElementById('ColsSM').value
  			)
  		),
- 		setScaMultMatrix: () => dispatch(
+ 		setSolve: () => dispatch(
  			setScaMultMatrix()
  		), 
  		setChangeMatrixSM: (event) => dispatch(
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
  				event.target.value
  			)
  		), 
- 		setScaleValue: (event) => dispatch(
+ 		setScale: (event) => dispatch(
  			setScaleValue(
  				event.target.value
  			)
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class ScaMult extends React.Component {
 	render() {
-		const {rows, ScaMultCols, setCreateSM, ScaMultMatrix, setScaMultMatrix, setChangeMatrixSM, setScaleValue, ScaMultMatrixArray, ScaleValue} = this.props;
+		const {rows, cols, setCreateSM, solve, setSolve, setChangeMatrixSM, setScale, matrixArray, scale} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
@@ -60,20 +60,21 @@ class ScaMult extends React.Component {
 					<MatrixSelect	setId={"ColsSM"}  onChangeFunction={setCreateSM} />
 				</div>
 				{ 
-					(ScaMultCols) ?
+					(cols) ?
 						<div> 
 							<div>
-								<input id="scaleInput" className="matBox" onChange={setScaleValue}/>
-								<Matrix assignID={'mat3'} rows={rows} cols={ScaMultCols} onChangeFunction={setChangeMatrixSM}/>
+								<input id="scaleInput" className="matBox" onChange={setScale}/>
+								<Matrix assignID={'mat3'} rows={rows} cols={cols} onChangeFunction={setChangeMatrixSM}/>
 							</div>
-							<CalculateButton onClickFunction={setScaMultMatrix} />
+							<CalculateButton onClickFunction={setSolve} />
 						</div>
 					:  
 						<p></p>
 				}
 				{
-					(ScaMultMatrix) ? 
-						<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
+					(solve) ? 
+						//console.log(scale, matrixArray)
+						<MatrixSM scale={scale} matrix={matrixArray} />
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
