@@ -120,7 +120,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					ScaMultRows: action.payload[0], 
 					ScaMultCols: action.payload[1], 
 					ScaMultMatrixArray: createArray(action.payload[0], action.payload[1], "3"),
-					ScaleValue: 1
+					ScaleValue: 1,
+					ScaMultMatrix: false
 				}
 			)
 

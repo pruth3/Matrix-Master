@@ -16,7 +16,7 @@ import {
 
 const mapStateToProps = (state) => { 
   	return {
-  		ScaMultRows: state.createMatrix.ScaMultRows, 
+  		rows: state.createMatrix.ScaMultRows, 
   		ScaMultCols: state.createMatrix.ScaMultCols, 
   		ScaMultMatrixArray: state.createMatrix.ScaMultMatrixArray,
   		ScaMultMatrix: state.createMatrix.ScaMultMatrix, 
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class ScaMult extends React.Component {
 	render() {
-		const {ScaMultRows, ScaMultCols, setCreateSM, ScaMultMatrix, setScaMultMatrix, setChangeMatrixSM, setScaleValue, ScaMultMatrixArray, ScaleValue} = this.props;
+		const {rows, ScaMultCols, setCreateSM, ScaMultMatrix, setScaMultMatrix, setChangeMatrixSM, setScaleValue, ScaMultMatrixArray, ScaleValue} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
@@ -64,7 +64,7 @@ class ScaMult extends React.Component {
 						<div> 
 							<div>
 								<input id="scaleInput" className="matBox" onChange={setScaleValue}/>
-								<Matrix assignID={'mat3'} rows={ScaMultRows} cols={ScaMultCols} onChangeFunction={setChangeMatrixSM}/>
+								<Matrix assignID={'mat3'} rows={rows} cols={ScaMultCols} onChangeFunction={setChangeMatrixSM}/>
 							</div>
 							<CalculateButton onClickFunction={setScaMultMatrix} />
 						</div>
@@ -74,7 +74,7 @@ class ScaMult extends React.Component {
 				{
 					(ScaMultMatrix) ? 
 						<MatrixSM scale={ScaleValue} matrix={ScaMultMatrixArray} />
-					:(ScaMultRows) ?
+					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
 						<p>Select the size of the matrices</p>
