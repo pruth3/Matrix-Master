@@ -42,8 +42,8 @@ class MatAdd extends React.Component {
 				<div className="bg-black p2">
 					<h1 className="center">Matrix Addition </h1>
 					<div> 
-						<MatrixSelect	setId={"rows"}	setCreateMatrix={setCreateMatrix} />
-						<MatrixSelect	setId={"cols"}  setCreateMatrix={setCreateMatrix} />
+						<MatrixSelect	setId={"rows"}	onChangeFunction={setCreateMatrix} />
+						<MatrixSelect	setId={"cols"}  onChangeFunction={setCreateMatrix} />
 					</div>
 					{ 
 						(col) ?

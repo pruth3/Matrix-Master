@@ -56,8 +56,8 @@ class ScaMult extends React.Component {
 			<div className="bg-black p2">
 				<h1 className="center">Scalar Multiplication</h1>
 				<div> 
-					<MatrixSelect	setId={"RowsSM"}  setCreateMatrix={setCreateSM} />
-					<MatrixSelect	setId={"ColsSM"}  setCreateMatrix={setCreateSM} />
+					<MatrixSelect	setId={"RowsSM"}  onChangeFunction={setCreateSM} />
+					<MatrixSelect	setId={"ColsSM"}  onChangeFunction={setCreateSM} />
 				</div>
 				{ 
 					(ScaMultCols) ?

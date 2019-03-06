@@ -4,7 +4,7 @@ import tachyons from 'tachyons';
 
 import './MatrixSelect.css';
 
-const MatrixSelect = ({setId, setCreateMatrix}) => {
+const MatrixSelect = ({setId, onChangeFunction}) => {
 	return(
 		<div className="selection">
 			<p>
@@ -16,7 +16,7 @@ const MatrixSelect = ({setId, setCreateMatrix}) => {
 				}	
 				<select id={setId} 
 						className="matDim"
-						onChange={setCreateMatrix}>
+						onChange={onChangeFunction}>
 				 	<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
