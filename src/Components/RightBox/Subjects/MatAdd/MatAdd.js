@@ -49,9 +49,9 @@ class MatAdd extends React.Component {
 						(col) ?
 							<div> 
 								<div>
-									<Matrix assignID={'mat1'} rows={row} cols={col} setChangeMatrix={setChangeMatrix} />
+									<Matrix assignID={'mat1'} rows={row} cols={col} onChangeFunction={setChangeMatrix} />
 									<div className="symbol"><p>+</p></div>
-									<Matrix assignID={'mat2'} rows={row} cols={col} setChangeMatrix={setChangeMatrix} />
+									<Matrix assignID={'mat2'} rows={row} cols={col} onChangeFunction={setChangeMatrix} />
 								</div>
 								<CalculateButton onClickFunction={setAddMatrix} />
 							</div>

@@ -3,7 +3,7 @@ import React from 'react';
 import tachyons from 'tachyons';
 import './Matrix.css';
 
-const Matrix = ({assignID, rows, cols, setChangeMatrix}) => {
+const Matrix = ({assignID, rows, cols, onChangeFunction}) => {
 
 	const subItems = (i, cols) => {
 		let td = [];
@@ -12,7 +12,7 @@ const Matrix = ({assignID, rows, cols, setChangeMatrix}) => {
 			let stringCoord = matNum + i.toString() + j.toString();
 			td.push(
 				<td>
-					<input id={stringCoord} defaultValue="" className="matBox" onChange={setChangeMatrix} />
+					<input id={stringCoord} defaultValue="" className="matBox" onChange={onChangeFunction} />
 				</td>
 			)
 		}
