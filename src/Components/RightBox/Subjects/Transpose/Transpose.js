@@ -1,15 +1,27 @@
 import React from 'react'; 
+import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './Transpose.css'
 
-const Transpose = () => {
-	return(
-		<div>
-			<p>Transpose
-		</p>
-		</div> 
-	); 
+const mapStateToProps = (state) => { 
+	return {
+
+	}
 }
 
-export default Transpose; 
+const mapDispatchToProps = (dispatch) => { 
+	return {
+		
+	}
+}
+
+class Transpose extends React.Component {
+	render() {
+		return(
+			<h1>Transpose</h1>
+		)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Transpose);  
