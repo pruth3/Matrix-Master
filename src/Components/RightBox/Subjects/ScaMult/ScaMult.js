@@ -66,7 +66,7 @@ class ScaMult extends React.Component {
 								<input id="scaleInput" className="matBox" onChange={setScaleValue}/>
 								<Matrix assignID={'mat3'} rows={ScaMultRows} cols={ScaMultCols} setChangeMatrix={setChangeMatrixSM}/>
 							</div>
-							<CalculateButton setAddMatrix={setScaMultMatrix} />
+							<CalculateButton onClickFunction={setScaMultMatrix} />
 						</div>
 					:  
 						<p></p>
