@@ -31,6 +31,6 @@ export const setModifyMatrix2 = (id, value) => {
 export const setSolveMatrixMult = () => {
 	return {
 		type: SOLVE_MATRIX_MULT, 
-		value: 
+		value: true
 	}
 }
