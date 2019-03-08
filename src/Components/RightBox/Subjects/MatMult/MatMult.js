@@ -11,4 +11,4 @@ const MatMult = () => {
 	); 
 }
 
-export default MatMult; 
+export default MatMult;

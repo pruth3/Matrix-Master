@@ -247,7 +247,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
-						TransposeMatrixArray: modifyArray(action.payload[0], action.payload[1], state.MatMultArray2), 
+						matrixArray2: modifyArray(action.payload[0], action.payload[1], state.MatMultArray2), 
 						solveMatMult: false
 					}
 				)
