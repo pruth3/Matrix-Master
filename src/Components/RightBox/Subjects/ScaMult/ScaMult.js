@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
   		solve: state.createMatrix.ScaMultMatrix, 
   		scale: state.createMatrix.ScaleValue
 	}
-}
+} 
 
 const mapDispatchToProps = (dispatch) => { 
  	return {

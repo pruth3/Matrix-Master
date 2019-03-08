@@ -16,17 +16,38 @@ import {
 	//RESET_ALL_PAGES
 } from '../../../State/constants.js'
 
-const currentMatrix = {
+import {
+	CREATE_MATRIX_TRANSPOSE,
+	MODIFY_MATRIX_TRANSPOSE,
+	SOLVE_MATRIX_TRANSPOSE
+} from '../Subjects/Transpose/State/constants.js'
+
+const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
+
 	row: 0, 
 	col: 0, 
 	matrixArray1: [],  
 	matrixArray2: [], 
 	addMatrix: false, 
+
 	ScaMultRows: 0, 
 	ScaMultCols: 0,
 	ScaMultMatrixArray: [], 
-	ScaMultMatrix: false, 
-	ScaleValue: 1
+	ScaleValue: 1,
+	ScaMultMatrix: false,
+
+	TransposeRows: 0, 
+	TransposeCols: 0, 
+	TransposeMatrixArray: [], 
+	solveTranspose: false, 
+
+	MatMultRows1: 0, 
+	MatMultCols1Rows2: 0, 
+	MatMultCols2: 0, 
+	MatMultArray1: [], 
+	MatMultArray2: [], 
+	solveMatMult: false
+
 }
 
 const resetValues = (matrixNumber) => {
@@ -69,8 +90,11 @@ const modifyArray = (id, value, currArray) => {
 }
 
 export const createMatrix = (state={currentMatrix}, action={}) => {
-	console.log(action.type)
+
 	switch (action.type) {
+
+		///////////////////////////////////////////////////////// ADD MATRIX /////////////////////////////////////////////////////////
+
 		case CREATE_MATRIX:
 			return Object.assign(
 				{}, 
@@ -112,6 +136,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				}
 			)
 
+		///////////////////////////////////////////////////////// SCALE MATRIX /////////////////////////////////////////////////////
+
 		case CREATE_MATRIX_SCA_MULT:
 			return Object.assign(
 				{},
@@ -125,21 +151,6 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 				}
 			)
 
-		// case RESET_ALL_PAGES: // this still has to be configured
-		// 	return Object.assign(
-		// 		{}, 
-		// 		state, 
-		// 		{
-		// 			row: 0, 
-		// 			col: 0, 
-		// 			matrixArray1: [],  
-		// 			matrixArray2: [], 
-		// 			addMatrix: false, 
-		// 			ScaMultRows: 0, 
-		// 			ScaMultCols: 0,
-		// 			ScaMultMatrixArray: []
-		// 		}
-		// 	)
 		case SCA_MULT_MATRIX: 
 			return Object.assign(
 				{}, 
@@ -166,8 +177,103 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					ScaMultMatrix: false
 				}
 			)
+		///////////////////////////////////////////////////////// TRANSPOSE MATRIX //////////////////////////////////////////////////
+
+		case CREATE_MATRIX_TRANSPOSE:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						TransposeRows: action.payload[0],
+						TransposeCols: action.payload[1],
+						TransposeMatrixArray: createArray(action.payload[0], action.payload[1], "4"),
+						solveTranspose: false
+					}
+				)
+
+		case MODIFY_MATRIX_TRANSPOSE:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						TransposeMatrixArray: modifyArray(action.payload[0], action.payload[1], state.TransposeMatrixArray), 
+						solveTranspose: false
+					}
+				)
+		
+		case SOLVE_MATRIX_TRANSPOSE:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveTranspose: true
+					}
+				)
+
+		///////////////////////////////////////////////////////// MATRIX MULT //////////////////////////////////////////////////
+
+		case CREATE_MATRIX_MULT:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						MatMultRows1: action.payload[0],
+						MatMultCols1Rows2: action.payload[1],
+						MatMultCols2: action.payload[2],
+						MatMultArray1: createArray(action.payload[0], action.payload[1], "5"),
+						MatMultArray2: createArray(action.payload[1], action.payload[2], "6")
+						solveMatMult: false
+					}
+				)
+
+		case MODIFY_MATRIX_MULT_1:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						MatMultArray1: modifyArray(action.payload[0], action.payload[1], state.MatMultArray1), 
+						solveMatMult: false
+					}
+				)
+		case MODIFY_MATRIX_MULT_2:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						TransposeMatrixArray: modifyArray(action.payload[0], action.payload[1], state.MatMultArray2), 
+						solveMatMult: false
+					}
+				)
+		
+		case SOLVE_MATRIX_MULT:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveMatMult: true
+					}
+				)
 
 		default: 
 			return state
 	}
 }
+
+
+
+// case RESET_ALL_PAGES: // this still has to be configured
+// 	return Object.assign(
+// 		{}, 
+// 		state, 
+// 		{
+// 			row: 0, 
+// 			col: 0, 
+// 			matrixArray1: [],  
+// 			matrixArray2: [], 
+// 			addMatrix: false, 
+// 			ScaMultRows: 0, 
+// 			ScaMultCols: 0,
+// 			ScaMultMatrixArray: []
+// 		}
+// 	)
+

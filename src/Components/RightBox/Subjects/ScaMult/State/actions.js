@@ -1,4 +1,4 @@
-import {
+import { 
 	CREATE_MATRIX_SCA_MULT, 
 	SCA_MULT_MATRIX, 
 	MODIFY_SM_MATRIX, 
