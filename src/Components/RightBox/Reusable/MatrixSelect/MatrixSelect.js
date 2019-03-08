@@ -8,7 +8,15 @@ const MatrixSelect = ({setId, onChangeFunction}) => {
 	return(
 		<div className="selection">
 			<p>
-				{
+				{   (setId === "rows1MM") ?
+						<p>Enter Matrix 1 Rows</p>
+					:
+					(setId === "cols1rows2MM") ?
+						<p> Enter Matrix 1 Columns and Matrix 2 Rows</p>
+					:
+					(setId === "cols2MM") ?
+						<p>Enter Matrix 2 Columns</p>
+					:
 					(setId.substring(0,4) === "rows" || setId.substring(0,4) === "Rows") ?
 						<p>Enter Matrix Rows:<br/></p>
 					:
