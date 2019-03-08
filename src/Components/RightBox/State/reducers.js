@@ -22,6 +22,13 @@ import {
 	SOLVE_MATRIX_TRANSPOSE
 } from '../Subjects/Transpose/State/constants.js'
 
+import {
+	CREATE_MATRIX_MULT, 
+	MODIFY_MATRIX_MULT_1, 
+	MODIFY_MATRIX_MULT_2, 
+	SOLVE_MATRIX_MULT
+} from '../Subjects/MatMult/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -221,7 +228,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						MatMultCols1Rows2: action.payload[1],
 						MatMultCols2: action.payload[2],
 						MatMultArray1: createArray(action.payload[0], action.payload[1], "5"),
-						MatMultArray2: createArray(action.payload[1], action.payload[2], "6")
+						MatMultArray2: createArray(action.payload[1], action.payload[2], "6"),
 						solveMatMult: false
 					}
 				)
