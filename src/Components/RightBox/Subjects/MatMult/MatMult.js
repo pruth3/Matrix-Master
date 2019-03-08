@@ -42,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
  		), 
  		setModify2: (event) => dispatch(
  			setModifyMatrix2(
+ 				event.target.id, 
  				event.target.value
  			)
  		),
@@ -56,11 +57,11 @@ class MatMult extends React.Component {
 		const {rows1, cols1rows2, cols2, matrixArray1, matrixArray2, solve, setCreate, setModify1, setModify2, setSolve} = this.props;
 		return(
 			<div className="bg-black p2">
-				<h1 className="center">Scalar Multiplication</h1>
+				<h1 className="center">Matrix Multiplication</h1>
 				<div> 
 					<MatrixSelect	setId={"rows1MM"}  onChangeFunction={setCreate} />
 					<MatrixSelect	setId={"cols1rows2MM"}  onChangeFunction={setCreate} />
-					<MatrixSelect	setId={"cols2"}  onChangeFunction={setCreate} />
+					<MatrixSelect	setId={"cols2MM"}  onChangeFunction={setCreate} />
 				</div>
 				{ 
 					(cols2) ?
