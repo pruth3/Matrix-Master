@@ -6,7 +6,7 @@ import './MatMult.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-//import MatrixSM from './MatrixSM/MatrixSM'
+import MatrixMM from './MatrixMM/MatrixMM'
 import {
 	setCreateMatrixMult,
 	setModifyMatrix1, 
@@ -77,8 +77,8 @@ class MatMult extends React.Component {
 				}
 				{
 					(solve) ? 
-						console.log(matrixArray1, matrixArray2)
-						//<MatrixSM scale={scale} matrix={matrixArray} />
+						//console.log(matrixArray1, matrixArray2)
+						<MatrixMM matrix1={matrixArray1} matrix2={matrixArray2} />
 					:(rows1) ?
 						<p>Click submit to compute</p>
 					: 
