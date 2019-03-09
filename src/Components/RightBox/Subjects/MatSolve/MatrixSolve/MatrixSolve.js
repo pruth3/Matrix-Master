@@ -26,7 +26,7 @@ const items = (matrix) => {
 const MatrixSolve = ({matrix, vector}) => {
 	const solvedMatrix = math.lusolve(matrix, vector)
 	return(
-		<form className="black-80 w-40 ">
+		<form className="black-80">
 			<table className="matBorder">
 				{items(solvedMatrix)}
 			</table>

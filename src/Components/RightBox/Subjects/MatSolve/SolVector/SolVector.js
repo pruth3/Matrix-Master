@@ -21,7 +21,7 @@ const SolVector = ({rows}) => {
 
 
 	return(
-		<form className="black-80 w-40 ">
+		<form className="black-80">
 			<table className="matBorder">
 				{items(rows)}
 			</table>

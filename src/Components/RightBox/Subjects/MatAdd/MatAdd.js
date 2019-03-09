@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 		setAddMatrix: () => dispatch(setAddMatrix())
 	}
 }
-
+ 
 class MatAdd extends React.Component {
 	render() {
 		const {

@@ -26,7 +26,7 @@ const items = (matrix) => {
 const AddMatrix = ({matrix1, matrix2}) => {
 	const solvedMatrix = math.add(matrix1, matrix2);
 	return (
-		<form className="black-80 w-40 ">
+		<form className="black-80">
 			<table className="matBorder">
 				{items(solvedMatrix)}
 			</table>

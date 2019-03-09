@@ -34,7 +34,7 @@ const Matrix = ({assignID, rows, cols, onChangeFunction}) => {
 	const formID = assignID + 'form';
 
 	return(
-		<form id={formID} className="black-80 w-40 ">
+		<form id={formID} className="black-80">
 			<table className="matBorder" id={assignID}>
 				{items(rows, cols)}
 			</table>

@@ -66,6 +66,7 @@ class MatSolve extends React.Component {
 							<div>
 								<Matrix assignID={'mat7'} rows={rows} cols={rows} onChangeFunction={setModify}/>
 								<SolVector rows={rows}/>
+								<div className="symbol"><p>=</p></div>
 								<Matrix assignID={'mat8'} rows={rows} cols={1} onChangeFunction={setModify2}/>
 
 							</div>
@@ -76,11 +77,11 @@ class MatSolve extends React.Component {
 				}
 				{
 					(solve) ? 
-						// <div>
-						// 	<p>{matrixArray}</p>
-						// 	<p>{bArray}</p>
-						// </div>
-						<MatrixSolve matrix={matrixArray} vector={bArray}/>
+						<div>
+							<SolVector rows={rows}/>
+							<div className="symbol"><p>=</p></div>
+							<MatrixSolve matrix={matrixArray} vector={bArray}/>
+						</div>
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 

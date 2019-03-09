@@ -25,7 +25,7 @@ const items = (matrix) => {
 const MatrixTranspose = ({matrix}) => {
 	const solvedMatrix = math.transpose(matrix);
 	return(
-		<form className="black-80 w-40 ">
+		<form className="black-80">
 			<table className="matBorder">
 				{items(solvedMatrix)}
 			</table>

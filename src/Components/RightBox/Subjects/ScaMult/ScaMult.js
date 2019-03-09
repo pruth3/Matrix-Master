@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => { 
  	return {
- 		setCreateSM: (event) => dispatch(
+ 		setCreateSM: (event) => dispatch( 
  			setCreateSM(
  				document.getElementById('RowsSM').value, 
  				document.getElementById('ColsSM').value

@@ -13,7 +13,8 @@
 }
 
 .symbol {
-	width: 5px;
+	width: 15px;
 	display: inline-block;
 	vertical-align: middle;
+	text-align: center;
 }
