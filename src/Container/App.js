@@ -55,7 +55,7 @@ class App extends Component {
           <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
           <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
           <MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
-          <MyButton buttonName='RREF'                     setNewPage={setNewPage}/>
+          <MyButton buttonName='Solve Matrix'             setNewPage={setNewPage}/>
           <MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
           <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
           <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>

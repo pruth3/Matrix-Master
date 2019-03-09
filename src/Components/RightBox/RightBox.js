@@ -8,7 +8,7 @@ import ScaMult from './Subjects/ScaMult/ScaMult';
 import InProd from './Subjects/InProd/InProd';
 import Transpose from './Subjects/Transpose/Transpose';
 import MatMult from './Subjects/MatMult/MatMult';
-import RREF from './Subjects/RREF/RREF';
+import MatSolve from './Subjects/MatSolve/MatSolve';
 import LinMap from './Subjects/LinMap/LinMap';
 import Inverse from './Subjects/Inverse/Inverse';
 import Det from './Subjects/Det/Det';
@@ -26,7 +26,7 @@ const RightBox = ({page}) => {
 				(page === "ScaMult") ? 		<ScaMult/>:
 				(page === "Transpose") ? 	<Transpose/>:
 				(page === "MatMult") ? 		<MatMult/>:
-				(page === "RREF") ? 		<RREF/>:
+				(page === "MatSolve") ? 	<MatSolve/>:
 				(page === "LinMap") ? 		<LinMap/>:
 				(page === "Inverse") ? 		<Inverse/>:
 				(page === "Det") ? 			<Det/>:

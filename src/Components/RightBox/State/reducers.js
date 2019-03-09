@@ -29,6 +29,13 @@ import {
 	SOLVE_MATRIX_MULT
 } from '../Subjects/MatMult/State/constants.js'
 
+import {
+	CREATE_MATRIX_SOLVE, 
+	MODIFY_MATRIX_SOLVE, 
+	SOLVE_MATRIX_SOLVE,
+	MODIFY_MATRIX_B_SOLVE
+} from '../Subjects/MatSolve/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -53,7 +60,12 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	MatMultCols2: 0, 
 	MatMultArray1: [], 
 	MatMultArray2: [], 
-	solveMatMult: false
+	solveMatMult: false, 
+
+	MatSolveRows: 0, 
+	MatSolveArray: [],
+	MatSolveBArray:[],
+	solveMatSolve: false
 
 }
 
@@ -260,6 +272,56 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						solveMatMult: true
 					}
 				)
+
+		//////////////////////////////////////////////////////// MATRIX SOLVE //////////////////////////////////////////////////
+
+		case CREATE_MATRIX_SOLVE:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						MatSolveRows: action.payload,
+						MatSolveArray: createArray(action.payload, action.payload, "7"),
+						MatSolveBArray: createArray(action.payload, "1", "8"),
+						solveMatSolve: false
+					}
+				)
+
+		case MODIFY_MATRIX_SOLVE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						MatSolveArray: modifyArray(action.payload[0], action.payload[1], state.MatSolveArray), 
+						solveMatSolve: false 
+					}
+				)
+
+		case MODIFY_MATRIX_B_SOLVE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						MatSolveBArray: modifyArray(action.payload[0], action.payload[1], state.MatSolveBArray), 
+						solveMatSolve: false 
+					}
+				)
+
+		case SOLVE_MATRIX_SOLVE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveMatSolve: true
+					}
+				)
+
+
+		// , 
+		// MODIFY_MATRIX_SOLVE, 
+		// SOLVE_MATRIX_SOLVE
+
+
 
 		default: 
 			return state

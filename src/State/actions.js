@@ -11,7 +11,7 @@ export const setNewPage = (text) => {
       case 'Scalar Multiplication' :    livePage='ScaMult'; break;
       case 'Transpose' :                livePage='Transpose'; break;
       case 'Matrix Multiplication' :    livePage='MatMult'; break;
-      case 'RREF' :                     livePage='RREF'; break;
+      case 'Solve Matrix' :             livePage='MatSolve'; break;
       case 'Linear Mapping' :           livePage='LinMap'; break;
       case 'Inverse' :                  livePage='Inverse'; break;
       case 'Determinant' :              livePage='Det'; break;
