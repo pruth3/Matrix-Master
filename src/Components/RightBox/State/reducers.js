@@ -36,6 +36,13 @@ import {
 	MODIFY_MATRIX_B_SOLVE
 } from '../Subjects/MatSolve/State/constants.js'
 
+import {
+	CREATE_LINEAR_MAPPING, 
+	MODIFY_LM_MATRIX,
+	MODIFY_LM_VECTOR, 
+	SOLVE_LINEAR_MAPPING
+} from '../Subjects/LinMap/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -65,7 +72,12 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	MatSolveRows: 0, 
 	MatSolveArray: [],
 	MatSolveBArray:[],
-	solveMatSolve: false
+	solveMatSolve: false, 
+
+	LinMapRows: 0, 
+	LinMapArray: [], 
+	LinMapVecor: [], 
+	solveLinMap: false
 
 }
 
@@ -316,12 +328,48 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					}
 				)
 
+		//////////////////////////////////////////////////////// LINEAR MAPPING /////////////////////////////////////
 
-		// , 
-		// MODIFY_MATRIX_SOLVE, 
-		// SOLVE_MATRIX_SOLVE
+		case CREATE_LINEAR_MAPPING: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						LinMapRows: action.payload,
+						LinMapArray: createArray(action.payload, action.payload, "9"),
+						LinMapVecor: createArray(action.payload, "1", "A"),
+						solveLinMap: false
+					}
+				)
 
+		case MODIFY_LM_MATRIX : 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						LinMapArray: modifyArray(action.payload[0], action.payload[1], state.LinMapArray), 
+						solveLinMap: false 
+					}
+				)
 
+		case MODIFY_LM_VECTOR: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						LinMapVecor: modifyArray(action.payload[0], action.payload[1], state.LinMapVecor), 
+						solveLinMap: false
+					}
+				)
+
+		case SOLVE_LINEAR_MAPPING: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveLinMap: true 
+					}
+				)
 
 		default: 
 			return state

@@ -33,4 +33,4 @@ export const setSolveMatrixSolve = (value) => {
 		type: SOLVE_MATRIX_SOLVE, 
 		payload: true
 	}
-}
+} 
