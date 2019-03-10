@@ -33,4 +33,4 @@ export const setSolveLinearMapping = (value) => {
 		type: SOLVE_LINEAR_MAPPING, 
 		payload: true
 	}
-} 
+}  

@@ -43,6 +43,12 @@ import {
 	SOLVE_LINEAR_MAPPING
 } from '../Subjects/LinMap/State/constants.js'
 
+import {
+	CREATE_MATRIX_INVERSE, 
+	MODIFY_MATRIX_INVERSE, 
+	SOLVE_MATRIX_INVERSE
+} from '../Subjects/Inverse/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -77,7 +83,11 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	LinMapRows: 0, 
 	LinMapArray: [], 
 	LinMapVecor: [], 
-	solveLinMap: false
+	solveLinMap: false, 
+
+	InverseRows: 0, 
+	InverseArray: [], 
+	solveInverse: false
 
 }
 
@@ -368,6 +378,38 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						solveLinMap: true 
+					}
+				)
+
+		//////////////////////////////////////////////////////// INVERSE /////////////////////////////////////
+
+		case CREATE_MATRIX_INVERSE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						InverseRows: action.payload,
+						InverseArray: createArray(action.payload, action.payload, "B"),
+						solveInverse: false
+					}
+				)
+
+		case MODIFY_MATRIX_INVERSE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						InverseArray: modifyArray(action.payload[0], action.payload[1], state.InverseArray), 
+						solveInverse: false
+					}
+				)
+
+		case SOLVE_MATRIX_INVERSE: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveInverse: true
 					}
 				)
 
