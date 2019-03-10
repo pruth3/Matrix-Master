@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => {
  		setCreate: (event) => dispatch(
  			setCreateLinearMapping(
  				document.getElementById('rowsLM').value, 
- 			)
+ 			) 
  		),
 
  		setModify: (event) => dispatch(

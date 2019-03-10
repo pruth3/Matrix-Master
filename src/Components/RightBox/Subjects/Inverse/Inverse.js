@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
  	return {
  		setCreate: (event) => dispatch(
  			setCreateInverse(
- 				document.getElementById('rowsLM').value, 
+ 				document.getElementById('rowsInv').value, 
  			) 
  		),
 
@@ -48,7 +48,7 @@ class Inverse extends React.Component {
 			<div className="bg-black p2">
 				<h1 className="center">Inverse</h1>
 				<div> 
-					<MatrixSelect	setId={"rowsLM"}  onChangeFunction={setCreate} />
+					<MatrixSelect	setId={"rowsInv"}  onChangeFunction={setCreate} />
 				</div>
 				{ 
 					(rows) ?

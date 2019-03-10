@@ -11,4 +11,4 @@ const AreaPgram = () => {
 	); 
 }
 
-export default AreaPgram; 
+export default AreaPgram;

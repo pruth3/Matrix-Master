@@ -49,6 +49,12 @@ import {
 	SOLVE_MATRIX_INVERSE
 } from '../Subjects/Inverse/State/constants.js'
 
+import {
+	CREATE_DET_MATRIX, 
+	MODIFY_DET_MATRIX, 
+	SOLVE_DET_MATRIX
+} from '../Subjects/Det/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -87,7 +93,11 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	InverseRows: 0, 
 	InverseArray: [], 
-	solveInverse: false
+	solveInverse: false, 
+
+	DetRows: 0, 
+	DetArray: [], 
+	solveDet: false
 
 }
 
@@ -413,6 +423,42 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					}
 				)
 
+		//////////////////////////////////////////////////////// INVERSE /////////////////////////////////////
+
+		case CREATE_DET_MATRIX: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						DetRows: action.payload,
+						DetArray: createArray(action.payload, action.payload, "C"),
+						solveDet: false
+					}
+				)
+
+		case MODIFY_DET_MATRIX: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						DetArray: modifyArray(action.payload[0], action.payload[1], state.DetArray), 
+						solveDet: false
+					}
+				)
+
+		case SOLVE_DET_MATRIX: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveDet: true
+					}
+				)
+
+		//////////////////////////////////////////////////////// PARALLELOGRAM /////////////////////////////////////
+
+		
+		
 		default: 
 			return state
 	}
