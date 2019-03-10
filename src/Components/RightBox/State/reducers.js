@@ -106,6 +106,7 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	DetArray: [], 
 	solveDet: false, 
 
+	PgramRows: 0,
 	PgramVector1: [], 
 	PgramVector2: [], 
 	solvePgram: false 
@@ -472,6 +473,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
+						PgramRows: action.payload,
 						PgramVector1: createArray("2", "1", "D"),
 						PgramVector2: createArray("2", "1", "E"),
 						solvePgram: false
@@ -484,7 +486,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						PgramVector1: modifyArray(action.payload[0], action.payload[1], state.PgramVector1), 
-						solveDet: false
+						solvePgram: false
 					}
 				)
 
@@ -494,7 +496,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						PgramVector2: modifyArray(action.payload[0], action.payload[1], state.PgramVector2), 
-						solveDet: false
+						solvePgram: false
 					}
 				)
 
@@ -503,7 +505,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
-
+						solvePgram: true
 					}
 				)
 

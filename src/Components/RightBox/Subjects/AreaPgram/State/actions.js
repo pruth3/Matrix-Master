@@ -5,9 +5,10 @@ import {
 	SOLVE_PGRAM_MATRIX
 } from './constants.js'
 
-export const setCreatePgram = () => {
+export const setCreatePgram = (rows) => {
 	return {
 		type: CREATE_PGRAM_MATRIX, 
+		payload: rows
 	}
 } 
 
