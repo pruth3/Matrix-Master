@@ -474,7 +474,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						PgramRows: action.payload,
-						PgramVector1: createArray("2", "1", "D"),
+						PgramVector1: createArray(action.payload, "1", "D"),
 						PgramVector2: createArray("2", "1", "E"),
 						solvePgram: false
 					}
@@ -508,7 +508,6 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						solvePgram: true
 					}
 				)
-
 
 		default: 
 			return state
