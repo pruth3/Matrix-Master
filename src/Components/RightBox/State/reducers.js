@@ -55,6 +55,13 @@ import {
 	SOLVE_DET_MATRIX
 } from '../Subjects/Det/State/constants.js'
 
+import {
+	CREATE_PGRAM_MATRIX, 
+	MODIFY_PGRAM_VECTOR1, 
+	MODIFY_PGRAM_VECTOR2, 
+	SOLVE_PGRAM_MATRIX
+} from '../Subjects/AreaPgram/State/constants.js'
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
@@ -97,8 +104,11 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	DetRows: 0, 
 	DetArray: [], 
-	solveDet: false
+	solveDet: false, 
 
+	PgramVector1: [], 
+	PgramVector2: [], 
+	solvePgram: false 
 }
 
 const resetValues = (matrixNumber) => {
@@ -457,8 +467,47 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 
 		//////////////////////////////////////////////////////// PARALLELOGRAM /////////////////////////////////////
 
-		
-		
+		case CREATE_PGRAM_MATRIX:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						PgramVector1: createArray("2", "1", "D"),
+						PgramVector2: createArray("2", "1", "E"),
+						solvePgram: false
+					}
+				)
+
+		case MODIFY_PGRAM_VECTOR1:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						PgramVector1: modifyArray(action.payload[0], action.payload[1], state.PgramVector1), 
+						solveDet: false
+					}
+				)
+
+		case MODIFY_PGRAM_VECTOR2:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						PgramVector2: modifyArray(action.payload[0], action.payload[1], state.PgramVector2), 
+						solveDet: false
+					}
+				)
+
+		case SOLVE_PGRAM_MATRIX:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+
+					}
+				)
+
+
 		default: 
 			return state
 	}
