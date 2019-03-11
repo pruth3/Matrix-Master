@@ -59,8 +59,16 @@ import {
 	CREATE_PGRAM_MATRIX, 
 	MODIFY_PGRAM_VECTOR1, 
 	MODIFY_PGRAM_VECTOR2, 
+	MODIFY_PGRAM_VECTOR3,
 	SOLVE_PGRAM_MATRIX
 } from '../Subjects/AreaPgram/State/constants.js'
+
+import {
+	CREATE_DOT_MATRIX, 
+	MODIFY_DOT_ARRAY1, 
+	MODIFY_DOT_ARRAY2, 
+	SOLVE_DOT_MATRIX
+} from '../Subjects/Dot/State/constants.js'
 
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
@@ -68,7 +76,12 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	col: 0, 
 	matrixArray1: [],  
 	matrixArray2: [], 
-	addMatrix: false, 
+	addMatrix: false,
+
+	DotRows: 0, 
+	DotArray1: [], 
+	DotArray2: [], 
+	DotSolve: false,
 
 	ScaMultRows: 0, 
 	ScaMultCols: 0,
@@ -109,6 +122,7 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	PgramRows: 0,
 	PgramVector1: [], 
 	PgramVector2: [], 
+	PgramVector3: [],
 	solvePgram: false 
 }
 
@@ -197,6 +211,55 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					addMatrix: true
 				}
 			)
+
+		///////////////////////////////////////////////////////// DOT PRODUCT /////////////////////////////////////////////////////
+
+		// CREATE_DOT_MATRIX, 
+		// MODIFY_DOT_ARRAY1, 
+		// MODIFY_DOT_ARRAY2, 
+		// SOLVE_DOT_MATRIX
+
+		case CREATE_DOT_MATRIX:
+			return Object.assign(
+				{},
+				state, 
+				{
+					DotRows: action.payload,
+					DotArray1: createArray(action.payload, "1", "G"),
+					DotArray2: createArray(action.payload, "1", "H"),
+					DotSolve: false 
+				}
+			)
+
+		case MODIFY_DOT_ARRAY1:
+			return Object.assign(
+				{},
+				state, 
+				{
+					DotArray1: modifyArray(action.payload[0], action.payload[1], state.DotArray1), 
+					DotSolve: false
+				}
+			)
+
+		case MODIFY_DOT_ARRAY2:
+			return Object.assign(
+				{},
+				state, 
+				{
+					DotArray2: modifyArray(action.payload[0], action.payload[1], state.DotArray2),
+					DotSolve: false
+				}
+			)
+
+		case SOLVE_DOT_MATRIX:
+			return Object.assign(
+				{},
+				state, 
+				{
+					DotSolve: true
+				}
+			)
+
 
 		///////////////////////////////////////////////////////// SCALE MATRIX /////////////////////////////////////////////////////
 
@@ -476,6 +539,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						PgramRows: action.payload,
 						PgramVector1: createArray(action.payload, "1", "D"),
 						PgramVector2: createArray(action.payload, "1", "E"),
+						PgramVector3: createArray(action.payload, "1", "F"),
 						solvePgram: false
 					}
 				)
@@ -496,6 +560,16 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						PgramVector2: modifyArray(action.payload[0], action.payload[1], state.PgramVector2), 
+						solvePgram: false
+					}
+				)
+
+		case MODIFY_PGRAM_VECTOR3:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						PgramVector3: modifyArray(action.payload[0], action.payload[1], state.PgramVector3), 
 						solvePgram: false
 					}
 				)

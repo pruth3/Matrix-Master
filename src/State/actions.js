@@ -7,6 +7,7 @@ export const setNewPage = (text) => {
 	let livePage = 'Home'; 
     switch(text) {
       case 'Home' :                     livePage='Home'; break;
+      case 'Dot Product' :              livePage='Dot'; break;
       case 'Matrix Addition' :          livePage='MatAdd'; break;
       case 'Scalar Multiplication' :    livePage='ScaMult'; break;
       case 'Transpose' :                livePage='Transpose'; break;
@@ -16,11 +17,7 @@ export const setNewPage = (text) => {
       case 'Inverse' :                  livePage='Inverse'; break;
       case 'Determinant' :              livePage='Det'; break;
       case 'Area of Parallelogram' :    livePage='AreaPgram'; break;
-      case 'Area of Parallelepiped' :   livePage='AreaPiped'; break;
-      case 'Diogonalization' :          livePage='Diag'; break;
       case 'Exponential' :              livePage='Expon'; break;
-      case 'Inner Products' :           livePage='InProd'; break;
-      case 'Least Squares' :            livePage='LeastSq'; break;
       default: livePage='Home';
     }
 	return {

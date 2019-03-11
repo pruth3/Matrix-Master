@@ -51,6 +51,8 @@ class App extends Component {
 
         <div className="left bg-blue white b--lightest-blue br3">
           <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
+          <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
           <MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
           <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
           <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
@@ -60,11 +62,9 @@ class App extends Component {
           <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
           <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
           <MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Area of Parallelepiped'   setNewPage={setNewPage}/>
-          <MyButton buttonName='Diogonalization'          setNewPage={setNewPage}/>
           <MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Inner Products'           setNewPage={setNewPage}/>
-          <MyButton buttonName='Least Squares'            setNewPage={setNewPage}/>
+          <MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
+          <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
         </div>
 
         <RightBox page={page}/>
@@ -75,3 +75,9 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+//          <MyButton buttonName='Diogonalization'          setNewPage={setNewPage}/>
+//          <MyButton buttonName='Inner Products'           setNewPage={setNewPage}/>
+//          <MyButton buttonName='Least Squares'            setNewPage={setNewPage}/>
+//          <MyButton buttonName='Area of Parallelepiped'   setNewPage={setNewPage}/>
+

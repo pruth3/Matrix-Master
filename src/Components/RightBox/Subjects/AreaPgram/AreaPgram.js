@@ -6,11 +6,12 @@ import './AreaPgram.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 //import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-//import math from 'mathjs';
+import math from 'mathjs';
 import {
 	setCreatePgram, 
 	setModifyPgram1, 
 	setModifyPgram2, 
+	setModifyPgram3, 
 	setSolvePgram, 
 } from './State/actions';
 
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => {
   		rows: state.createMatrix.PgramRows,
   		matrixArray1: state.createMatrix.PgramVector1, 
   		matrixArray2: state.createMatrix.PgramVector2,
+  		matrixArray3: state.createMatrix.PgramVector3,
   		solve: state.createMatrix.solvePgram, 
 	}
 } 
@@ -26,7 +28,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => { 
  	return {
  		setCreate: (event) => dispatch(
- 			setCreatePgram('rowsPgram')
+ 			setCreatePgram(document.getElementById('rowsPgram').value)
  		),
 
  		setModify: (event) => dispatch(
@@ -40,6 +42,12 @@ const mapDispatchToProps = (dispatch) => {
  				event.target.id, 
  				event.target.value
  			)
+ 		),
+ 		setModify3: (event) => dispatch(
+ 			setModifyPgram3(
+ 				event.target.id, 
+ 				event.target.value
+ 			)
  		), 
 		setSolve: () => dispatch(
  			setSolvePgram()
@@ -49,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class AreaPgram extends React.Component {
 	render() {
-		const {matrixArray1, matrixArray2, solve, setCreate, setModify, setModify2, setSolve} = this.props;
+		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setCreate, setModify, setModify2, setModify3, setSolve} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Area of Parallelogram</h1>
@@ -62,26 +70,46 @@ class AreaPgram extends React.Component {
 
 				</select>
 				{
-					(matrixArray1) ?
+					(rows === "2") ?
 						<div> 
 							<div>
-								<Matrix assignID={'matD'} rows={2} cols={1} onChangeFunction={setModify}/>
-								<Matrix assignID={'matE'} rows={2} cols={1} onChangeFunction={setModify2}/>
+								u = <Matrix assignID={'matD'} rows={rows} cols={1} onChangeFunction={setModify}/>
+								
+								v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
 							</div>
 							<CalculateButton onClickFunction={setSolve} />
 						</div>
-					:  
+					: (rows === "3") ?
+						<div> 
+							<div>
+								u = <Matrix assignID={'matD'} rows={rows} cols={1} onChangeFunction={setModify}/>
+								
+								v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
+								
+								w = <Matrix assignID={'matF'} rows={rows} cols={1} onChangeFunction={setModify3}/>
+							</div>
+							<CalculateButton onClickFunction={setSolve} />
+						</div>
+					:
 						<p></p>
 				}
 				{
-					(solve) ? 
+					(solve && rows === "2") ? 
 						<p>
-							Hello
+							The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2)))}
 						</p>
-					:(matrixArray2) ?
-						<p>Click submit to compute</p>
+					: (solve && rows === "3") ?
+						<p>
+							The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2, matrixArray3)))}
+						</p>
+					: (!rows || rows === "0") ? 
+						<p>
+							Select Parallelogram or Parallelopiped
+						</p>
 					: 
-						<p>Select the size of the matrices</p>
+						<p>
+							Click submit to compute
+						</p>
 				}
 			</div> 
 		);
