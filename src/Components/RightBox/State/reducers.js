@@ -70,6 +70,12 @@ import {
 	SOLVE_DOT_MATRIX
 } from '../Subjects/Dot/State/constants.js'
 
+import {
+	CREATE_EXPON_MATRIX, 
+	MODIFY_EXPON_ARRAY, 
+	SOLVE_EXPON_ARRAY
+}
+
 
 
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
