@@ -74,7 +74,7 @@ import {
 	CREATE_EXPON_MATRIX, 
 	MODIFY_EXPON_ARRAY, 
 	SOLVE_EXPON_ARRAY
-}
+} from '../Subjects/Expon/State/constants.js'
 
 
 
