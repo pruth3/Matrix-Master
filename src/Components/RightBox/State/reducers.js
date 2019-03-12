@@ -131,7 +131,11 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 	PgramVector1: [], 
 	PgramVector2: [], 
 	PgramVector3: [],
-	solvePgram: false 
+	solvePgram: false, 
+
+	ExponRows: 0, 
+	ExponArray: [], 
+	solveExpon: false
 }
 
 const resetValues = (matrixNumber) => {
@@ -588,6 +592,36 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					state, 
 					{
 						solvePgram: true
+					}
+				)
+
+		case CREATE_EXPON_MATRIX: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						ExponRows: action.payload,
+						ExponArray: createArray(action.payload, action.payload, "G"),
+						solveExpon: false
+					}
+				)
+
+		case MODIFY_EXPON_ARRAY: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						ExponArray: modifyArray(action.payload[0], action.payload[1], state.ExponArray), 
+						solveExpon: false
+					}
+				)
+
+		case SOLVE_EXPON_ARRAY: 
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveExpon: true 
 					}
 				)
 
