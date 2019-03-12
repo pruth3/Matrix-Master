@@ -70,6 +70,8 @@ import {
 	SOLVE_DOT_MATRIX
 } from '../Subjects/Dot/State/constants.js'
 
+
+
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	row: 0, 
