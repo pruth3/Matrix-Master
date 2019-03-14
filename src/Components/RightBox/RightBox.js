@@ -14,6 +14,7 @@ import Inverse from './Subjects/Inverse/Inverse';
 import Det from './Subjects/Det/Det';
 import AreaPgram from './Subjects/AreaPgram/AreaPgram';
 import Expon from './Subjects/Expon/Expon';
+import Trace from './Subjects/Trace/Trace';
 
 
 const RightBox = ({page}) => {
@@ -30,8 +31,8 @@ const RightBox = ({page}) => {
 				(page === "Inverse") ? 		<Inverse/>:
 				(page === "Det") ? 			<Det/>:
 				(page === "AreaPgram") ? 	<AreaPgram/>:
-
 				(page === "Expon")?			<Expon/>:
+				(page === "Trace")?			<Trace/>:
 
 				<Home/>
 			}

@@ -595,6 +595,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					}
 				)
 
+		//////////////////////////////////////////////////////// EXPON /////////////////////////////////////
+
 		case CREATE_EXPON_MATRIX: 
 			return Object.assign(
 					{}, 
@@ -624,6 +626,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						solveExpon: true 
 					}
 				)
+
+		
 
 		default: 
 			return state
