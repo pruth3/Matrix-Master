@@ -76,6 +76,11 @@ import {
 	SOLVE_EXPON_ARRAY
 } from '../Subjects/Expon/State/constants.js'
 
+import {
+	CREATE_TRACE_MATRIX, 
+	MODIFY_TRACE_ARRAY, 
+	SOLVE_TRACE_ARRAY
+} from '../Subjects/Trace/State/constants.js'
 
 
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
@@ -135,7 +140,11 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	ExponRows: 0, 
 	ExponArray: [], 
-	solveExpon: false
+	solveExpon: false, 
+
+	TraceRows: 0, 
+	TraceArray: [], 
+	solveTrace: false
 }
 
 const resetValues = (matrixNumber) => {
@@ -626,6 +635,36 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 						solveExpon: true 
 					}
 				)
+
+		//////////////////////////////////////////////////////// TRACE /////////////////////////////////////
+
+		case CREATE_TRACE_MATRIX:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						
+					}
+				)
+
+		case MODIFY_TRACE_ARRAY:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						
+					}
+				)
+
+		case SOLVE_TRACE_ARRAY:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						
+					}
+				)
+
 
 		default: 
 			return state
