@@ -643,7 +643,9 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
-						
+						TraceRows: action.payload,
+						TraceArray: createArray(action.payload, action.payload, "H"),
+						solveTrace: false
 					}
 				)
 
@@ -652,7 +654,8 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
-						
+						TraceArray: modifyArray(action.payload[0], action.payload[1], state.TraceArray), 
+						solveTrace: false
 					}
 				)
 
@@ -661,7 +664,7 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					{}, 
 					state, 
 					{
-						
+						solveTrace: true
 					}
 				)
 
