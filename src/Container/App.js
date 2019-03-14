@@ -35,7 +35,7 @@ const particlesOptions = {
       }
     }
   }
-}
+} //<Particles className='particles' params={particlesOptions}/>
 
 class App extends Component {
   render() {
@@ -45,7 +45,7 @@ class App extends Component {
     } = this.props;
     return (
       <div className='App'>
-        <Particles className='particles' params={particlesOptions}/>
+        
 
         <MMtitle/>
 
