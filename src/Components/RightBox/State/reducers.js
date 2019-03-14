@@ -627,8 +627,6 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					}
 				)
 
-		
-
 		default: 
 			return state
 	}
