@@ -24,4 +24,4 @@ export const setSolveDet = (value) => {
 		type: SOLVE_DET_MATRIX, 
 		payload: true
 	}
-} 
+}  
