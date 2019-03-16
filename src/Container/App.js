@@ -6,6 +6,7 @@ import Particles from 'react-particles-js';
 import tachyons from 'tachyons';
 import MMtitle from '../Components/MMtitle/MMtitle';
 import RightBox from '../Components/RightBox/RightBox';
+import RightInfo from '../Components/RightBox/RightInfo';
 import MyButton from '../Components/MyButton/MyButton';
 import {setNewPage} from '../State/actions';
 
@@ -67,6 +68,7 @@ class App extends Component {
           <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
         </div>
         <RightBox page={page}/>
+        <RightInfo page={page}/>
       </div>
     );
   }
