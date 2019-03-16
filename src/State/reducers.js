@@ -1,7 +1,5 @@
 import {
-
 	CHANGE_PAGE
-
 } from './constants.js'
 
 const currentPage = {
@@ -17,3 +15,4 @@ export const newPage = (state={currentPage}, action={}) => {
 	}
 }
 
+ 

@@ -1,0 +1,20 @@
+.matDim {
+	width: 50px;
+	text-align: center;
+}
+
+.selection {
+	display: inline-block;
+	margin: 10px;
+}
+
+.submitButton {
+	width: 87.5px;
+}
+
+.symbol {
+	width: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}

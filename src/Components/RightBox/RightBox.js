@@ -3,63 +3,38 @@ import React from 'react';
 import tachyons from 'tachyons';
 import './RightBox.css';
 import Home from './Subjects/Home/Home';
-import AboutUs from './Subjects/AboutUs/AboutUs';
-import CalcOne from './Subjects/CalcOne/CalcOne';
-import CalcTwo from './Subjects/CalcTwo/CalcTwo';
-import CalcThree from './Subjects/CalcThree/CalcThree';
-import CalcFour from './Subjects/CalcFour/CalcFour';
-import Electricity from './Subjects/Electricity/Electricity';
-import LinAlgOne from './Subjects/LinAlgOne/LinAlgOne';
-import LinAlgTwo from './Subjects/LinAlgTwo/LinAlgTwo';
-import Mechanics from './Subjects/Mechanics/Mechanics';
-import Modern from './Subjects/Modern/Modern';
-import Programming from './Subjects/Programming/Programming';
-import Contact from './Subjects/Contact/Contact';
-import Stats from './Subjects/Stats/Stats';
+import Dot from './Subjects/Dot/Dot';
+import MatAdd from './Subjects/MatAdd/MatAdd';
+import ScaMult from './Subjects/ScaMult/ScaMult';
+import Transpose from './Subjects/Transpose/Transpose';
+import MatMult from './Subjects/MatMult/MatMult';
+import MatSolve from './Subjects/MatSolve/MatSolve';
+import LinMap from './Subjects/LinMap/LinMap';
+import Inverse from './Subjects/Inverse/Inverse';
+import Det from './Subjects/Det/Det';
+import AreaPgram from './Subjects/AreaPgram/AreaPgram';
+import Expon from './Subjects/Expon/Expon';
+import Trace from './Subjects/Trace/Trace';
+import Cross from './Subjects/Cross/Cross';
+
 
 const RightBox = ({page}) => {
 	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
-				(page === "AboutUs") ? 
-					<AboutUs/>
-				:
-				(page === "CalcOne") ? 
-					<CalcOne/>
-				:
-				(page === "CalcTwo") ? 
-					<CalcTwo/>
-				:
-				(page === "CalcThree") ? 
-					<CalcThree/>
-				:
-				(page === "CalcFour") ? 
-					<CalcFour/>
-				:
-				(page === "Electricity") ? 
-					<Electricity/>
-				:
-				(page === "LinAlgOne") ? 
-					<LinAlgOne/>
-				:
-				(page === "LinAlgTwo") ? 
-					<LinAlgTwo/>
-				:
-				(page === "Mechanics") ? 
-					<Mechanics/>
-				:
-				(page === "Modern") ? 
-					<Modern/>
-				:
-				(page === "Programming") ? 
-					<Programming/>
-				:
-				(page === "Stats") ? 
-					<Stats/>
-				:
-				(page === "Contact")?
-					<Contact/>
-				:
+				(page === "MatAdd")? 		<MatAdd/> :
+				(page === "Dot")? 		    <Dot/> :
+				(page === "ScaMult") ? 		<ScaMult/>:
+				(page === "Transpose") ? 	<Transpose/>:
+				(page === "MatMult") ? 		<MatMult/>:
+				(page === "MatSolve") ? 	<MatSolve/>:
+				(page === "LinMap") ? 		<LinMap/>:
+				(page === "Inverse") ? 		<Inverse/>:
+				(page === "Det") ? 			<Det/>:
+				(page === "AreaPgram") ? 	<AreaPgram/>:
+				(page === "Expon")?			<Expon/>:
+				(page === "Trace")?			<Trace/>:
+				(page === "Cross")?			<Cross/>:
 				<Home/>
 			}
        </div>
