@@ -5,7 +5,7 @@ import tachyons from 'tachyons';
 import './Cross.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import math from 'mathjs';
+import CrossMatrix from './CrossMatrix/CrossMatrix';
 import {
 	setCreateCross, 
 	setModifyCrossMatrix1, 
@@ -46,14 +46,6 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-var flatten = function(arr) {
-    var out = [];
-    for(var i = 0; i < arr.length; i++) {
-        out.push.apply(out, Array.isArray(arr[i]) ? flatten(arr[i]) : [ arr[i] ]);
-    }
-    return out;
-};
-
 class Cross extends React.Component {
 
 	componentDidMount() {
@@ -67,15 +59,14 @@ class Cross extends React.Component {
 				<div> 
 					<div>
 						<Matrix assignID={'matI'} rows={rows} cols="1" onChangeFunction={setModify1}/>
+						<div className="symbol"><p>x</p></div>
 						<Matrix assignID={'matJ'} rows={rows} cols="1" onChangeFunction={setModify2}/>
 					</div>
 					<CalculateButton onClickFunction={setSolve} />
 				</div>
 				{
 					(solve) ? 
-						<p>
-							The Cross Product is { math.cross(flatten(matrixArray1), flatten(matrixArray2)) }
-						</p>
+						<CrossMatrix matrix1={matrixArray1} matrix2={matrixArray2} /> 
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
