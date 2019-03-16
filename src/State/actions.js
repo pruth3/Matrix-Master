@@ -19,6 +19,7 @@ export const setNewPage = (text) => {
       case 'Area of Parallelogram' :    livePage='AreaPgram'; break;
       case 'Exponential' :              livePage='Expon'; break;
       case 'Trace' :                    livePage='Trace'; break;
+      case 'Cross Product' :            livePage='Cross'; break;
       default: livePage='Home';
     }
 	return {

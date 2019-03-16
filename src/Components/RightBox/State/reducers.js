@@ -82,6 +82,13 @@ import {
 	SOLVE_TRACE_ARRAY
 } from '../Subjects/Trace/State/constants.js'
 
+import {
+	CREATE_CROSS_MATRIX, 
+	MODIFY_CROSS_ARRAY1,
+	MODIFY_CROSS_ARRAY2, 
+	SOLVE_CROSS_ARRAY
+} from '../Subjects/Cross/State/constants.js'
+
 
 const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
@@ -144,7 +151,12 @@ const currentMatrix = { // change addMatrix => solveAddMatrix, etc.
 
 	TraceRows: 0, 
 	TraceArray: [], 
-	solveTrace: false
+	solveTrace: false, 
+
+	CrossRows: 0, 
+	CrossArray1: [], 
+	CrossArray2: [],
+	solveCross: false
 }
 
 const resetValues = (matrixNumber) => {
@@ -668,26 +680,53 @@ export const createMatrix = (state={currentMatrix}, action={}) => {
 					}
 				)
 
+		//////////////////////////////////////////////////////// CROSS PRODUCT /////////////////////////////////////
+
+		case CREATE_CROSS_MATRIX:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						CrossRows: "3",
+						CrossArray1: createArray("3", "1", "I"),
+						CrossArray2: createArray("3", "1", "J"),
+						solveCross: false
+					}
+				)
+
+		case MODIFY_CROSS_ARRAY1:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						CrossArray1: modifyArray(action.payload[0], action.payload[1], state.CrossArray1), 
+						solveCross: false
+					}
+				)
+
+		case MODIFY_CROSS_ARRAY2:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						CrossArray2: modifyArray(action.payload[0], action.payload[1], state.CrossArray2), 
+						solveCross: false
+					}
+				)
+
+		case SOLVE_CROSS_ARRAY:
+			return Object.assign(
+					{}, 
+					state, 
+					{
+						solveCross: true
+					}
+				)
+
 		default: 
 			return state
 	}
 }
 
 
-
-// case RESET_ALL_PAGES: // this still has to be configured
-// 	return Object.assign(
-// 		{}, 
-// 		state, 
-// 		{
-// 			row: 0, 
-// 			col: 0, 
-// 			matrixArray1: [],  
-// 			matrixArray2: [], 
-// 			addMatrix: false, 
-// 			ScaMultRows: 0, 
-// 			ScaMultCols: 0,
-// 			ScaMultMatrixArray: []
-// 		}
-// 	)
 

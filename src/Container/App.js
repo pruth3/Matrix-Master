@@ -35,7 +35,9 @@ const particlesOptions = {
       }
     }
   }
-} //<Particles className='particles' params={particlesOptions}/>
+}
+
+//<Particles className='particles' params={particlesOptions}/>
 
 class App extends Component {
   render() {
@@ -45,10 +47,8 @@ class App extends Component {
     } = this.props;
     return (
       <div className='App'>
-        
-
+        <Particles className='particles' params={particlesOptions}/>
         <MMtitle/>
-
         <div className="left bg-blue white b--lightest-blue br3">
           <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
           <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
@@ -66,9 +66,7 @@ class App extends Component {
           <MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
           <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
         </div>
-
         <RightBox page={page}/>
-
       </div>
     );
   }
@@ -76,8 +74,4 @@ class App extends Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-//          <MyButton buttonName='Diogonalization'          setNewPage={setNewPage}/>
-//          <MyButton buttonName='Inner Products'           setNewPage={setNewPage}/>
-//          <MyButton buttonName='Least Squares'            setNewPage={setNewPage}/>
-//          <MyButton buttonName='Area of Parallelepiped'   setNewPage={setNewPage}/>
 
