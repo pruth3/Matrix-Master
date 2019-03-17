@@ -17,10 +17,9 @@ import Expon from './Subjects/Expon/Expon';
 import Trace from './Subjects/Trace/Trace';
 import Cross from './Subjects/Cross/Cross';
 
-
 const RightInfo = ({page}) => {
-	if (page !== 'Home') {
-		return(
+	if (page === 'Home') return null
+	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
 				(page === "MatAdd")?        <MatAdd/> :
@@ -38,10 +37,9 @@ const RightInfo = ({page}) => {
 				(page === "Cross")?			<Cross/>:
 				<Home/>
 			}
-       </div>
-		);
-	}
-	return null
+	    </div>
+	);
 }
+
 
 export default RightInfo;

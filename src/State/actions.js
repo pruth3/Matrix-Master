@@ -1,6 +1,7 @@
 import { 
     CHANGE_PAGE,
-    //RESET_ALL_PAGES
+    //RESET_ALL_PAGES, 
+    START_PAGE
 } from './constants.js'
 
 export const setNewPage = (text) => {
@@ -27,4 +28,9 @@ export const setNewPage = (text) => {
 		payload: livePage 
 	}
 }
- 
+
+export const setStartPage = () => {
+  return {
+    type: START_PAGE
+  }
+}
