@@ -2,40 +2,40 @@ import React from 'react';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './RightInfo.css';
-import Home from './Subjects/Home/Home';
-import Dot from './Subjects/Dot/Dot';
-import MatAdd from './Subjects/MatAdd/MatAdd';
-import ScaMult from './Subjects/ScaMult/ScaMult';
-import Transpose from './Subjects/Transpose/Transpose';
-import MatMult from './Subjects/MatMult/MatMult';
-import MatSolve from './Subjects/MatSolve/MatSolve';
-import LinMap from './Subjects/LinMap/LinMap';
-import Inverse from './Subjects/Inverse/Inverse';
-import Det from './Subjects/Det/Det';
-import AreaPgram from './Subjects/AreaPgram/AreaPgram';
-import Expon from './Subjects/Expon/Expon';
-import Trace from './Subjects/Trace/Trace';
-import Cross from './Subjects/Cross/Cross';
+//import Home from './Subjects/Home/Home';
+import DotInfo from './Subjects/Dot/DotInfo/DotInfo';
+import MatAddInfo from './Subjects/MatAdd/MatAddInfo/MatAddInfo';
+import ScaMultInfo from './Subjects/ScaMult/ScaMultInfo/ScaMultInfo';
+import TransposeInfo from './Subjects/Transpose/TransposeInfo/TransposeInfo';
+import MatMultInfo from './Subjects/MatMult/MatMultInfo/MatMultInfo';
+import MatSolveInfo from './Subjects/MatSolve/MatSolveInfo/MatSolveInfo';
+import LinMapInfo from './Subjects/LinMap/LinMapInfo/LinMapInfo';
+import InverseInfo from './Subjects/Inverse/InverseInfo/InverseInfo';
+import DetInfo from './Subjects/Det/DetInfo/DetInfo';
+import AreaPgramInfo from './Subjects/AreaPgram/AreaPgramInfo/AreaPgramInfo';
+import ExponInfo from './Subjects/Expon/ExponInfo/ExponInfo';
+import TraceInfo from './Subjects/Trace/TraceInfo/TraceInfo';
+import CrossInfo from './Subjects/Cross/CrossInfo/CrossInfo';
 
 const RightInfo = ({page}) => {
 	if (page === 'Home') return null
 	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
-				(page === "MatAdd")?        <MatAdd/> :
-				(page === "Dot")? 		    <Dot/> :
-				(page === "ScaMult") ? 		<ScaMult/>:
-				(page === "Transpose") ? 	<Transpose/>:
-				(page === "MatMult") ? 		<MatMult/>:
-				(page === "MatSolve") ? 	<MatSolve/>:
-				(page === "LinMap") ? 		<LinMap/>:
-				(page === "Inverse") ? 		<Inverse/>:
-				(page === "Det") ? 			<Det/>:
-				(page === "AreaPgram") ? 	<AreaPgram/>:
-				(page === "Expon")?			<Expon/>:
-				(page === "Trace")?			<Trace/>:
-				(page === "Cross")?			<Cross/>:
-				<Home/>
+				(page === "MatAdd")?        <MatAddInfo/> :
+				(page === "Dot")? 		    <DotInfo/> :
+				(page === "ScaMult") ? 		<ScaMultInfo/>:
+				(page === "Transpose") ? 	<TransposeInfo/>:
+				(page === "MatMult") ? 		<MatMultInfo/>:
+				(page === "MatSolve") ? 	<MatSolveInfo/>:
+				(page === "LinMap") ? 		<LinMapInfo/>:
+				(page === "Inverse") ? 		<InverseInfo/>:
+				(page === "Det") ? 			<DetInfo/>:
+				(page === "AreaPgram") ? 	<AreaPgramInfo/>:
+				(page === "Expon")?			<ExponInfo/>:
+				(page === "Trace")?			<TraceInfo/>:
+				(page === "Cross")?			<CrossInfo/>:
+				null
 			}
 	    </div>
 	);
