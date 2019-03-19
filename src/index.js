@@ -8,6 +8,7 @@ import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import {newPage} from './State/reducers';
 import {createMatrix} from './Components/RightBox/State/reducers'
+import Particles from 'react-particles-js';
 
 const logger = createLogger();
 
@@ -18,9 +19,21 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(logger));
 
+const particlesOptions = {
+  particles: {
+    number: {
+      value: 30, 
+      density: {
+        enable: true, 
+        value_area: 100
+      }
+    }
+  }
+}
 
 ReactDOM.render(
 	<Provider store={store}>
+		<Particles className='particles' params={particlesOptions}/>
 		<App/>
 	</Provider>
 	, document.getElementById('root')

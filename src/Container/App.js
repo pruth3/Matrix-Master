@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './App.css';
-import Particles from 'react-particles-js';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import MMtitle from '../Components/MMtitle/MMtitle';
@@ -29,18 +28,6 @@ const mapDispatchToProps = (dispatch) => {
     setStartPage: () => dispatch(
       setStartPage()
     )
-  }
-}
-
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30, 
-      density: {
-        enable: true, 
-        value_area: 100
-      }
-    }
   }
 }
 
@@ -77,7 +64,7 @@ class App extends Component {
         </div>
         <RightInfo page={page}/>
         <RightBox page={page}/>
-        <Particles className='particles' params={particlesOptions}/>
+        
       </div>
     );
   }
