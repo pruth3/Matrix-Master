@@ -2,7 +2,11 @@ import React from 'react';
 
 const DetInfo = () => {
 	return (
-		<p></p>
+		<div className="bg-black p2 pushLeft">
+			<p>Definition:</p>
+			<p>Theorems: </p>
+			<p>Algebraic Examples:</p>
+		</div>
 	);
 }
 
