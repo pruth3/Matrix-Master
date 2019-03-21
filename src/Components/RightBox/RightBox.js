@@ -22,11 +22,8 @@ const RightBox = ({page}) => {
 	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
-				(page === "MatAdd")?
-					( 		
-					<MatAdd/>
-				) :
-				(page === "Dot")? 		    <Dot/> :
+				(page === "MatAdd")?		<MatAdd/>:
+				(page === "Dot")? 		    <Dot/>:
 				(page === "ScaMult") ? 		<ScaMult/>:
 				(page === "Transpose") ? 	<Transpose/>:
 				(page === "MatMult") ? 		<MatMult/>:
