@@ -18,7 +18,7 @@ import TraceInfo from './Subjects/Trace/TraceInfo/TraceInfo';
 import CrossInfo from './Subjects/Cross/CrossInfo/CrossInfo';
 
 const RightInfo = ({page}) => {
-	if (page === 'Home') return null
+	if (page === 'Home' || page === 'Contributors') return null
 	return(
 		<div className="right w-80 bg-blue white b--lightest-blue br3">
 			{
