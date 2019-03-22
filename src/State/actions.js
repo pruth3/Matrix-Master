@@ -21,6 +21,7 @@ export const setNewPage = (text) => {
       case 'Exponential' :              livePage='Expon'; break;
       case 'Trace' :                    livePage='Trace'; break;
       case 'Cross Product' :            livePage='Cross'; break;
+      case 'Contributors' :             livePage='Contributors'; break;
       default: livePage='Home';
     }
 	return {
