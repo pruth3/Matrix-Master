@@ -16,6 +16,7 @@ import AreaPgram from './Subjects/AreaPgram/AreaPgram';
 import Expon from './Subjects/Expon/Expon';
 import Trace from './Subjects/Trace/Trace';
 import Cross from './Subjects/Cross/Cross';
+import Contributors from './Subjects/Contributors/Contributors';
 
 
 const RightBox = ({page}) => {
@@ -35,6 +36,7 @@ const RightBox = ({page}) => {
 				(page === "Expon")?			<Expon/>:
 				(page === "Trace")?			<Trace/>:
 				(page === "Cross")?			<Cross/>:
+				(page === "Contributors") ? <Contributors/>:
 				<Home/>
 			}
        </div>
