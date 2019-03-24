@@ -1,11 +1,13 @@
- import React from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './Cross.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import CrossMatrix from './CrossMatrix/CrossMatrix';
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+//import CrossMatrix from './CrossMatrix/CrossMatrix';
+import math from 'mathjs';
 import {
 	setCreateCross, 
 	setModifyCrossMatrix1, 
@@ -46,6 +48,19 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+var flatten = function(arr) {
+    var out = [];
+    for(var i = 0; i < arr.length; i++) {
+        out.push.apply(out, Array.isArray(arr[i]) ? flatten(arr[i]) : [ arr[i] ]);
+    }
+    return out;
+};
+
+const solvedMatrix = (matrixArray1, matrixArray2) => {
+	const solvedMatrix1D = math.cross(flatten(matrixArray1), flatten(matrixArray2));
+	return [[solvedMatrix1D[0]], [solvedMatrix1D[1]], [solvedMatrix1D[2]]];
+}
+
 class Cross extends React.Component {
 
 	componentDidMount() {
@@ -66,7 +81,7 @@ class Cross extends React.Component {
 				</div>
 				{
 					(solve) ? 
-						<CrossMatrix matrix1={matrixArray1} matrix2={matrixArray2} /> 
+						<MatrixPrint solvedMatrix={solvedMatrix(matrixArray1, matrixArray2)} /> 
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
