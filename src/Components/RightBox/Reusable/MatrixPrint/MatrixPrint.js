@@ -2,8 +2,6 @@ import React from 'react';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './MatrixPrint.css';
-//import './../../Matrix/Matrix.css'
-import math from 'mathjs';
 
 const subItems = (row) => {
 	let td = [];
@@ -34,5 +32,3 @@ const MatrixPrint = ({solvedMatrix}) => {
 }
 
 export default MatrixPrint;
-
-// const solvedMatrix = math.add(matrix1, matrix2);
