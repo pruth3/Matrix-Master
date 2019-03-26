@@ -7,8 +7,6 @@ import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import SolVector from './SolVector/SolVector';
-//import MatrixSolve from './MatrixSolve/MatrixSolve'
-//import MatrixSM from './MatrixSM/MatrixSM'
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
 import math from 'mathjs';
 import {
