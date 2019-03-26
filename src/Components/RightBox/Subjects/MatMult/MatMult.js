@@ -6,7 +6,6 @@ import './MatMult.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-// import MatrixMM from './MatrixMM/MatrixMM'
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
 import math from 'mathjs';
 import {
