@@ -13,7 +13,7 @@ import Particles from 'react-particles-js';
 const logger = createLogger();
 
 const rootReducer = combineReducers({
-	newPage, 
+	newPage,
 	createMatrix
 })
 
@@ -22,9 +22,9 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 const particlesOptions = {
   particles: {
     number: {
-      value: 30, 
+      value: 30,
       density: {
-        enable: true, 
+        enable: true,
         value_area: 100
       }
     }

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import tachyons from 'tachyons'; 
 import './MatAdd.css';
 //import {Bar} from 'react-chartjs-2';s
-import Matrix from '../../Reusable/Matrix/Matrix';
+import Matrix from '../../Reusable/Matrix/Matrix'; 
 //import AddMatrix from './AddMatrix/AddMatrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
