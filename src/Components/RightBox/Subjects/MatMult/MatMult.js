@@ -6,7 +6,9 @@ import './MatMult.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import MatrixMM from './MatrixMM/MatrixMM'
+// import MatrixMM from './MatrixMM/MatrixMM'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateMatrixMult,
 	setModifyMatrix1, 
@@ -52,6 +54,8 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+const solvedMatrix = (matrix1, matrix2) => math.multiply(matrix1, matrix2);
+
 class MatMult extends React.Component {
 	render() {
 		const {rows1, cols1rows2, cols2, matrixArray1, matrixArray2, solve, setCreate, setModify1, setModify2, setSolve} = this.props;
@@ -77,8 +81,7 @@ class MatMult extends React.Component {
 				}
 				{
 					(solve) ? 
-						//console.log(matrixArray1, matrixArray2)
-						<MatrixMM matrix1={matrixArray1} matrix2={matrixArray2} />
+						<MatrixPrint solvedMatrix={solvedMatrix(matrixArray1, matrixArray2)} />
 					:(rows1) ?
 						<p>Click submit to compute</p>
 					: 
