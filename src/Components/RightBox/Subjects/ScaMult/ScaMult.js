@@ -8,7 +8,6 @@ import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
 import math from 'mathjs';
-//import MatrixSM from './MatrixSM/MatrixSM'
 import {
 	setCreateSM,
 	setScaMultMatrix, 
