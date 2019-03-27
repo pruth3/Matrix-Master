@@ -6,13 +6,14 @@ import './LinMap.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import MatrixMM from '../MatMult/MatrixMM/MatrixMM'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateLinearMapping, 
 	setModifyLmMatrix, 
 	setModifyLmVector, 
 	setSolveLinearMapping
-} from './State/actions';
+} from './State/actions'; 
 
 const mapStateToProps = (state) => { 
   	return {
@@ -49,6 +50,8 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+const solvedMatrix = (matrix1, matrix2) => math.multiply(matrix1, matrix2);
+
 class LinMap extends React.Component {
 	render() {
 		const {rows, matrixArray, vectorArray,solve, setCreate, setModify, setModify2, setSolve} = this.props;
@@ -72,7 +75,7 @@ class LinMap extends React.Component {
 				}
 				{
 					(solve) ? 
-						<MatrixMM matrix1={matrixArray} matrix2={vectorArray} />
+						<MatrixPrint solvedMatrix={solvedMatrix(matrixArray, vectorArray)} />
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
