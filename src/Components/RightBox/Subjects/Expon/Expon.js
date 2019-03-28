@@ -6,7 +6,9 @@ import './Expon.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import MatrixExpon from './MatrixExpon/MatrixExpon'
+//import MatrixExpon from './MatrixExpon/MatrixExpon'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateExpon, 
 	setModifyExponMatrix, 
@@ -20,7 +22,7 @@ const mapStateToProps = (state) => {
   		solve: state.createMatrix.solveExpon, 
 	}
 } 
-
+ 
 const mapDispatchToProps = (dispatch) => { 
  	return {
  		setCreate: (event) => dispatch(
@@ -40,6 +42,8 @@ const mapDispatchToProps = (dispatch) => {
  		), 
 	}
 }
+
+const solvedMatrix = (matrix) => math.expm(matrix)._data;
 
 class Expon extends React.Component {
 	render() {
@@ -62,8 +66,8 @@ class Expon extends React.Component {
 						<p></p>
 				}
 				{
-					(solve) ? 
-						<MatrixExpon matrix={matrixArray}/> 
+					(solve) ?
+						<MatrixPrint solvedMatrix={solvedMatrix(matrixArray)} />
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 
