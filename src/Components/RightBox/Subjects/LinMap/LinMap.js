@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
 import './LinMap.css'
