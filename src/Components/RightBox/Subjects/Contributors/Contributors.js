@@ -9,6 +9,9 @@ const Contributors = () => {
 					<h1 className="homeText">
 				  		Contributors
 				  	</h1>
+				  	<a rel="noopener noreferrer" 
+				  	   target="_blank" 
+				  	   href="https://github.com/apanesar11">apanesar11</a>
 				</div>
 			</footer>
 		</div>
