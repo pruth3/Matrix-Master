@@ -55,6 +55,7 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+
 class AreaPgram extends React.Component {
 	render() {
 		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setCreate, setModify, setModify2, setModify3, setSolve} = this.props;
@@ -63,7 +64,9 @@ class AreaPgram extends React.Component {
 				<h1 className="center">Area of Parallelogram</h1>
 				<select id="rowsPgram"
 						className="matDim"
-						onChange={setCreate}>
+						onChange={setCreate}
+						style={{ width: '130px'  }}
+				>
 					<option value="0">Select</option>
 				 	<option value="2">Parallelogram</option>
 				 	<option value="3">Parallelopiped</option>
