@@ -16,6 +16,10 @@
   margin-top: 0px;
 }
 
+.left {
+  display: none;
+}
+
 .right {
   /*height: 650px;*/
   float: right;
@@ -23,8 +27,13 @@
   width: 96%;
 }
 
+.title {
+  width: 96%;
+}
+
 @media screen and (min-width:1320px) {
   .left {
+    display: block;
     position: fixed;
 /*    height: 740px;*/
     border: solid #cdecff;
@@ -36,12 +45,10 @@
   .right {
     width: 80%;
   }
+  .title {
+    width: 80%;
+  }
 }
-
-
-
-
-
 
 p {
   font-family: Code;

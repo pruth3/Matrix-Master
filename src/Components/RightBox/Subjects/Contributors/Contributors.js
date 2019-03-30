@@ -27,10 +27,6 @@ const Contributors = () => {
 						className="githubLink">manpreetx247</a>
 					<a  rel="noopener noreferrer" 
 						target="_blank" 
-						href="https://github.com/manpreetx247"
-						className="githubLink">manpreetx247</a>
-					<a  rel="noopener noreferrer" 
-						target="_blank" 
 						href="https://github.com/GP146"
 						className="githubLink">GP146</a>
 				</div> 

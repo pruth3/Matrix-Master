@@ -5,7 +5,7 @@ import './MMtitle.css';
 
 const MMtitle = () => {
 	return(
-		<div className="w-80 title">
+		<div className="title">
 			<h1 className="f1 blue">Matrix Master</h1>
 		</div>
 	);
