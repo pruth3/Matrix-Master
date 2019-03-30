@@ -17,22 +17,30 @@
   margin-top: 0px;
 }
 
-.left {
-  position: fixed;
-  height: 740px;
-  border: solid #cdecff;
-  float: left; 
-  width: 13%;
-  margin-top: 25px;
-  padding-top: 7px;
-}
-
 .right {
   /*height: 650px;*/
   float: right;
   border: solid #ff725c;
-  margin-left: 0px;
+  width: 96%;
 }
+
+@media screen and (min-width:1320px) {
+  .left {
+    position: fixed;
+    height: 740px;
+    border: solid #cdecff;
+    float: left; 
+    width: 13%;
+    margin-top: 25px;
+    padding-top: 7px;
+  }
+  .right {
+    width: 80%;
+  }
+}
+
+
+
 
 
 

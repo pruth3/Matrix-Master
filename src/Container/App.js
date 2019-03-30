@@ -7,7 +7,7 @@ import MMtitle from '../Components/MMtitle/MMtitle';
 import RightBox from '../Components/RightBox/RightBox';
 import RightInfo from '../Components/RightBox/RightInfo';
 import MyButton from '../Components/MyButton/MyButton';
-import {
+import { 
   setNewPage, 
   setStartPage
 } from '../State/actions';
