@@ -35,7 +35,14 @@ h1 {
   width: 96%;
 }
 
+.dropMenu {
+  display: block;
+}
+
 @media screen and (min-width:1320px) {
+  .dropMenu {
+    display: none;
+  }
   .left {
     display: block;
     position: fixed;
