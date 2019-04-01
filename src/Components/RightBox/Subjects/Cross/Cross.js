@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Cross.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
