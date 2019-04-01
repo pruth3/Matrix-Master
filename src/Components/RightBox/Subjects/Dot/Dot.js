@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Dot.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
