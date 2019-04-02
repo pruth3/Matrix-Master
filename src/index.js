@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import {newPage} from './State/reducers';
-import {createMatrix} from './Components/RightBox/State/reducers'
+import {createMatrix} from './Components/RightBox/State/reducers';
 import Particles from 'react-particles-js';
 
 const logger = createLogger();
