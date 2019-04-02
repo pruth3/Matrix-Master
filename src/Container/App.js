@@ -31,8 +31,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-//<Particles className='particles' params={particlesOptions}/>
-
 class App extends Component {
   componentDidMount() {
     this.props.setStartPage();
@@ -89,7 +87,6 @@ class App extends Component {
         </div>
         <RightInfo page={page}/>
         <RightBox page={page}/>
-        
       </div>
     );
   }
