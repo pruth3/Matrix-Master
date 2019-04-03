@@ -41,6 +41,6 @@ const RightBox = ({page}) => {
 			}
        </div>
 	);
-}
+};
 
 export default RightBox;
