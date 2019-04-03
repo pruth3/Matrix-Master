@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contributors.css'
+import './Contributors.css';
 
 const Contributors = () => {
 	return(
@@ -33,6 +33,6 @@ const Contributors = () => {
 			</footer>
 		</div>
 	);
-}
+};
 
 export default Contributors;
