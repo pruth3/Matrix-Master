@@ -8,6 +8,6 @@ const AreaPgramInfo = () => {
 			<p>Algebraic Examples:</p>
 		</div>
 	);
-}
+};
 
 export default AreaPgramInfo;
