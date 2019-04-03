@@ -38,7 +38,7 @@ const RightInfo = ({page}) => {
 			}
 	    </div>
 	);
-}
+};
 
 
 export default RightInfo;
