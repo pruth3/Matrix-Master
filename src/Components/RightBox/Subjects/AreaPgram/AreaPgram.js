@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './AreaPgram.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 //import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
@@ -25,7 +24,7 @@ const mapStateToProps = (state) => {
 	}
 } 
 
-const mapDispatchToProps = (dispatch) => { 
+const mapDispatchToProps = (dispatch) => {
  	return {
  		setCreate: (event) => dispatch(
  			setCreatePgram(document.getElementById('rowsPgram').value)
@@ -116,7 +115,7 @@ class AreaPgram extends React.Component {
 				}
 			</div> 
 		);
-	}
-}
+	};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AreaPgram);  

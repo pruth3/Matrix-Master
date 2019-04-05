@@ -19,7 +19,7 @@ import CrossInfo from './Subjects/Cross/CrossInfo/CrossInfo';
 const RightInfo = ({page}) => {
 	if (page === 'Home' || page === 'Contributors') return null
 	return(
-		<div className="right w-80 bg-blue white b--lightest-blue br3">
+		<div className="right bg-blue white b--lightest-blue br3">
 			{
 				(page === "MatAdd")?        <MatAddInfo/> :
 				(page === "Dot")? 		    <DotInfo/> :
@@ -38,7 +38,7 @@ const RightInfo = ({page}) => {
 			}
 	    </div>
 	);
-}
+};
 
 
 export default RightInfo;

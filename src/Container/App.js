@@ -7,7 +7,7 @@ import MMtitle from '../Components/MMtitle/MMtitle';
 import RightBox from '../Components/RightBox/RightBox';
 import RightInfo from '../Components/RightBox/RightInfo';
 import MyButton from '../Components/MyButton/MyButton';
-import {
+import { 
   setNewPage, 
   setStartPage
 } from '../State/actions';
@@ -31,8 +31,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-//<Particles className='particles' params={particlesOptions}/>
-
 class App extends Component {
   componentDidMount() {
     this.props.setStartPage();
@@ -45,6 +43,31 @@ class App extends Component {
     return (
       <div className='App'>
         <MMtitle/>
+        <details className="dropMenu white">
+          <summary>
+            <input type="button"
+               className="no-underline near-white bg-animate bg-near-black hover-bg-gray 
+                       inline-flex items-center"
+               value="Page"
+               style={{fontSize: "12.5px"}}
+            />
+          </summary>
+          <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
+          <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
+          <MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
+          <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
+          <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
+          <MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
+          <MyButton buttonName='Solve Matrix'             setNewPage={setNewPage}/>
+          <MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
+          <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
+          <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
+          <MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
+          <MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
+          <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
+        </details>
         <div className="left bg-blue white b--lightest-blue br3">
           <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
           <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
@@ -64,7 +87,6 @@ class App extends Component {
         </div>
         <RightInfo page={page}/>
         <RightBox page={page}/>
-        
       </div>
     );
   }

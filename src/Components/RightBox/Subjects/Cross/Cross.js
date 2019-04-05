@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Cross.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
@@ -22,7 +21,7 @@ const mapStateToProps = (state) => {
   		matrixArray2: state.createMatrix.CrossArray2,
   		solve: state.createMatrix.solveCross, 
 	}
-} 
+};
 
 const mapDispatchToProps = (dispatch) => { 
  	return {
@@ -46,7 +45,7 @@ const mapDispatchToProps = (dispatch) => {
  			setSolveCross()
  		), 
 	}
-}
+};
 
 var flatten = function(arr) {
     var out = [];
@@ -59,7 +58,7 @@ var flatten = function(arr) {
 const solvedMatrix = (matrixArray1, matrixArray2) => {
 	const solvedMatrix1D = math.cross(flatten(matrixArray1), flatten(matrixArray2));
 	return [[solvedMatrix1D[0]], [solvedMatrix1D[1]], [solvedMatrix1D[2]]];
-}
+};
 
 class Cross extends React.Component {
 
@@ -89,7 +88,7 @@ class Cross extends React.Component {
 				}
 			</div> 
 		);
-	}
-}
+	};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cross);  
