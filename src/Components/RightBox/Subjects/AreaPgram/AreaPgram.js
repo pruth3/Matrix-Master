@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
 	}
 } 
 
-const mapDispatchToProps = (dispatch) => { 
+const mapDispatchToProps = (dispatch) => {
  	return {
  		setCreate: (event) => dispatch(
  			setCreatePgram(document.getElementById('rowsPgram').value)
