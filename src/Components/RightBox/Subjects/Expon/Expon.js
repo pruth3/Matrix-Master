@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
   		matrixArray: state.createMatrix.ExponArray,
   		solve: state.createMatrix.solveExpon, 
 	}
-} 
+}
  
 const mapDispatchToProps = (dispatch) => { 
  	return {
