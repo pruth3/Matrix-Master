@@ -21,8 +21,8 @@ const mapStateToProps = (state) => {
   		matrixArray2: state.createMatrix.PgramVector2,
   		matrixArray3: state.createMatrix.PgramVector3,
   		solve: state.createMatrix.solvePgram, 
-	}
-} 
+	};
+};
 
 const mapDispatchToProps = (dispatch) => {
  	return {
