@@ -8,6 +8,6 @@ const CrossInfo = () => {
 			<p>Algebraic Examples:</p>
 		</div>
 	);
-}
+};
 
 export default CrossInfo;
