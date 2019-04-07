@@ -1,6 +1,4 @@
 import React from 'react';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
 import './RightBox.css';
 import Home from './Subjects/Home/Home';
 import Dot from './Subjects/Dot/Dot';
