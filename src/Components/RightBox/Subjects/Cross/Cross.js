@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
   		matrixArray1: state.createMatrix.CrossArray1,
   		matrixArray2: state.createMatrix.CrossArray2,
   		solve: state.createMatrix.solveCross, 
-	}
+	};
 };
 
 const mapDispatchToProps = (dispatch) => { 
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
 		setSolve: () => dispatch(
  			setSolveCross()
  		), 
-	}
+	};
 };
 
 var flatten = function(arr) {
