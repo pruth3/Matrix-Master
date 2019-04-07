@@ -48,8 +48,8 @@ const mapDispatchToProps = (dispatch) => {
 		setSolve: () => dispatch(
  			setSolvePgram()
  		), 
-	}
-}
+	};
+};
 
 
 class AreaPgram extends React.Component {
