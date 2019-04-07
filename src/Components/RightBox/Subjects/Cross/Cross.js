@@ -1,11 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
-//import CrossMatrix from './CrossMatrix/CrossMatrix';
 import math from 'mathjs';
 import {
 	setCreateCross, 
