@@ -1,5 +1,4 @@
 import React from 'react';
-import './RightBox.css';
 import Home from './Subjects/Home/Home';
 import Dot from './Subjects/Dot/Dot';
 import MatAdd from './Subjects/MatAdd/MatAdd';

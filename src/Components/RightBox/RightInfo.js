@@ -1,5 +1,4 @@
 import React from 'react';
-import './RightInfo.css';
 import DotInfo from './Subjects/Dot/DotInfo/DotInfo';
 import MatAddInfo from './Subjects/MatAdd/MatAddInfo/MatAddInfo';
 import ScaMultInfo from './Subjects/ScaMult/ScaMultInfo/ScaMultInfo';
