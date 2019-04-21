@@ -58,7 +58,9 @@ const solvedMatrix = (matrixArray1, matrixArray2) => {
 };
 
 class Cross extends React.Component {
-
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	componentDidMount() {
 		this.props.setCreate();
 	}
