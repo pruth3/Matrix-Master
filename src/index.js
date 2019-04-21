@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'tachyons/css/tachyons.min.css';
 import App from './Container/App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';

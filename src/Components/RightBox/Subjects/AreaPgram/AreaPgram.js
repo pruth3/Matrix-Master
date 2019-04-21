@@ -1,9 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
 import Matrix from '../../Reusable/Matrix/Matrix';
-//import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import math from 'mathjs';
 import {
@@ -21,8 +18,8 @@ const mapStateToProps = (state) => {
   		matrixArray2: state.createMatrix.PgramVector2,
   		matrixArray3: state.createMatrix.PgramVector3,
   		solve: state.createMatrix.solvePgram, 
-	}
-} 
+	};
+};
 
 const mapDispatchToProps = (dispatch) => {
  	return {
@@ -51,8 +48,8 @@ const mapDispatchToProps = (dispatch) => {
 		setSolve: () => dispatch(
  			setSolvePgram()
  		), 
-	}
-}
+	};
+};
 
 
 class AreaPgram extends React.Component {

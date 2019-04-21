@@ -1,7 +1,4 @@
 import React from 'react';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
-import './RightInfo.css';
 import DotInfo from './Subjects/Dot/DotInfo/DotInfo';
 import MatAddInfo from './Subjects/MatAdd/MatAddInfo/MatAddInfo';
 import ScaMultInfo from './Subjects/ScaMult/ScaMultInfo/ScaMultInfo';

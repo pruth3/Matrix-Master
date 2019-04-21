@@ -1,11 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
 import Matrix from '../../Reusable/Matrix/Matrix';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
-//import CrossMatrix from './CrossMatrix/CrossMatrix';
 import math from 'mathjs';
 import {
 	setCreateCross, 
@@ -20,7 +17,7 @@ const mapStateToProps = (state) => {
   		matrixArray1: state.createMatrix.CrossArray1,
   		matrixArray2: state.createMatrix.CrossArray2,
   		solve: state.createMatrix.solveCross, 
-	}
+	};
 };
 
 const mapDispatchToProps = (dispatch) => { 
@@ -44,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
 		setSolve: () => dispatch(
  			setSolveCross()
  		), 
-	}
+	};
 };
 
 var flatten = function(arr) {
