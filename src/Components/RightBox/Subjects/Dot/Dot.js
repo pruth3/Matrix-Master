@@ -57,6 +57,9 @@ var flatten = function(arr) {
 };
 
 class Dot extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray1, matrixArray2, solve, setCreate, setModify, setModify2, setSolve} = this.props;
 		return(
