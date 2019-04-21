@@ -41,6 +41,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class Det extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setSolve} = this.props;
 		return(
