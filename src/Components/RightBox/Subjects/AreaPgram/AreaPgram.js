@@ -53,6 +53,9 @@ const mapDispatchToProps = (dispatch) => {
 
 
 class AreaPgram extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setCreate, setModify, setModify2, setModify3, setSolve} = this.props;
 		return(
