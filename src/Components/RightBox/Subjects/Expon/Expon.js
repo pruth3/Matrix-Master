@@ -45,6 +45,9 @@ const mapDispatchToProps = (dispatch) => {
 const solvedMatrix = (matrix) => math.expm(matrix)._data;
 
 class Expon extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setSolve} = this.props;
 		return(
