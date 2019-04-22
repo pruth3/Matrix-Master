@@ -47,6 +47,9 @@ const solvedMatrix = (matrix) => {
 }
 
 class Inverse extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setSolve} = this.props;
 		return(
