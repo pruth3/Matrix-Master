@@ -1,7 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax2'
 
-const ascii = 'U = 1/(R_(si) + sum_(i=1)^n(s_n/lambda_n) + R_(se))'
+const ascii = ''
 
 const MatAddInfo = () => {
 	return (
