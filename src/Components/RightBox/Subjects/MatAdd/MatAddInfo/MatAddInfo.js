@@ -3,11 +3,10 @@ import './MatAddInfo.css'
 import MathJax from 'react-mathjax2'
 
 const equation = `
-\\begin{array}{cc}
-  a & b \\\\
-  c & c
-\\end{array}
-
+	\\begin{array}{cc}
+	  a & b \\\\
+	  c & c
+	\\end{array}
 `
 
 const MatAddInfo = () => {
