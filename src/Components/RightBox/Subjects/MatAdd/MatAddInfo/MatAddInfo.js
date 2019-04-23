@@ -1,7 +1,13 @@
 import React from 'react';
+import './MatAddInfo.css'
 import MathJax from 'react-mathjax2'
 
-const ascii = ''
+const equation = `
+	\\begin{array}{cc}
+	  a & b \\\\
+	  c & c
+	\\end{array}
+`
 
 const MatAddInfo = () => {
 	return (
@@ -12,11 +18,11 @@ const MatAddInfo = () => {
 				Algebraic Examples:
 			</p>
 			<span style={{textAlign: 'center'}}>
-				<MathJax.Context input='ascii' >
-	                <div>
-	                    <MathJax.Node>{ascii}</MathJax.Node>
-	                </div>
-	            </MathJax.Context>
+				<MathJax.Context input="tex">
+					<div>
+						<MathJax.Node>{equation}</MathJax.Node>
+					</div>
+				</MathJax.Context>
             </span>
 		</div>
 	);
