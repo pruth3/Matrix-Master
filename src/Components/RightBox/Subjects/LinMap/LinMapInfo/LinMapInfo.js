@@ -2,7 +2,12 @@ import React from 'react';
 import './LinMapInfo.css'
 import MathJax from 'react-mathjax2'
 
-const equation = `f(x) = \\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi`
+const equation = `
+	\\begin{array}{cc}
+	  a & b \\\\
+	  c & c
+	\\end{array}
+`
 
 const LinMapInfo = () => {
 	return (
@@ -13,9 +18,9 @@ const LinMapInfo = () => {
 				Algebraic Examples:
 			</p>
 			<span style={{textAlign: 'center'}}>
-				<MathJax.Context>
+				<MathJax.Context input="tex">
 					<div>
-						<MathJax.Node inline>{equation}</MathJax.Node>
+						<MathJax.Node>{equation}</MathJax.Node>
 					</div>
 				</MathJax.Context>
             </span>
