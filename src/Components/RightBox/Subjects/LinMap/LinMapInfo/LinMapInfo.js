@@ -1,7 +1,8 @@
 import React from 'react';
+import './LinMapInfo.css'
 import MathJax from 'react-mathjax2'
 
-const ascii = 'U = 1/(R_(si) + sum_(i=1)^n(s_n/lambda_n) + R_(se))'
+const equation = `f(x) = \\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi`
 
 const LinMapInfo = () => {
 	return (
@@ -12,14 +13,15 @@ const LinMapInfo = () => {
 				Algebraic Examples:
 			</p>
 			<span style={{textAlign: 'center'}}>
-				<MathJax.Context input='ascii' >
-	                <div>
-	                    <MathJax.Node>{ascii}</MathJax.Node>
-	                </div>
-	            </MathJax.Context>
+				<MathJax.Context>
+					<div>
+						<MathJax.Node inline>{equation}</MathJax.Node>
+					</div>
+				</MathJax.Context>
             </span>
 		</div>
 	);
 }
+
 
 export default LinMapInfo;
