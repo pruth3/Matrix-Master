@@ -32,22 +32,22 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const BUTTON_NAMES = [
-'Home',
-'Dot Product',
-'Cross Product',
-'Matrix Addition',
-'Scalar Multiplication',
-'Transpose',
-'Matrix Multiplication',
-'Solve Matrix',
-'Linear Mapping',
-'Inverse',
-'Determinant',
-'Area of Parallelogram',
-'Exponential',
-'Trace',
-'Contributors',
-]
+  "Home",
+  "Dot Product",
+  "Cross Product",
+  "Matrix Addition",
+  "Scalar Multiplication",
+  "Transpose",
+  "Matrix Multiplication",
+  "Solve Matrix",
+  "Linear Mapping",
+  "Inverse",
+  "Determinant",
+  "Area of Parallelogram",
+  "Exponential",
+  "Trace",
+  "Contributors"
+];
 
 class App extends Component {
   componentDidMount() {
@@ -71,40 +71,17 @@ class App extends Component {
             />
           </summary>
           {
-
+            BUTTON_NAMES.map(name => {
+              return <MyButton buttonName={name} setNewPage={setNewPage}/>
+            })
           }
-          <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
-          <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
-          <MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
-          <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
-          <MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Solve Matrix'             setNewPage={setNewPage}/>
-          <MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
-          <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
-          <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
-          <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
         </details>
         <div className="left bg-blue white b--lightest-blue br3">
-          <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
-          <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
-          <MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
-          <MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
-          <MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Solve Matrix'             setNewPage={setNewPage}/>
-          <MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
-          <MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
-          <MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
-          <MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
-          <MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
-          <MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
+          {
+            BUTTON_NAMES.map(name => {
+              return <MyButton key={name} buttonName={name} setNewPage={setNewPage}/>
+            })
+          }
         </div>
         <RightInfo page={page}/>
         <RightBox page={page}/>
@@ -114,5 +91,21 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+//<MyButton buttonName='Home'                     setNewPage={setNewPage}/>
+//<MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
+//<MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
+//<MyButton buttonName='Matrix Addition'          setNewPage={setNewPage}/>
+//<MyButton buttonName='Scalar Multiplication'    setNewPage={setNewPage}/>
+//<MyButton buttonName='Transpose'                setNewPage={setNewPage}/>
+//<MyButton buttonName='Matrix Multiplication'    setNewPage={setNewPage}/>
+//<MyButton buttonName='Solve Matrix'             setNewPage={setNewPage}/>
+//<MyButton buttonName='Linear Mapping'           setNewPage={setNewPage}/>
+//<MyButton buttonName='Inverse'                  setNewPage={setNewPage}/>
+//<MyButton buttonName='Determinant'              setNewPage={setNewPage}/>
+//<MyButton buttonName='Area of Parallelogram'    setNewPage={setNewPage}/>
+//<MyButton buttonName='Exponential'              setNewPage={setNewPage}/>
+//<MyButton buttonName='Trace'                    setNewPage={setNewPage}/>
+//<MyButton buttonName='Contributors'             setNewPage={setNewPage}/>
 
 
