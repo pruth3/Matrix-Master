@@ -31,6 +31,24 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const BUTTON_NAMES = [
+'Home',
+'Dot Product',
+'Cross Product',
+'Matrix Addition',
+'Scalar Multiplication',
+'Transpose',
+'Matrix Multiplication',
+'Solve Matrix',
+'Linear Mapping',
+'Inverse',
+'Determinant',
+'Area of Parallelogram',
+'Exponential',
+'Trace',
+'Contributors',
+]
+
 class App extends Component {
   componentDidMount() {
     this.props.setStartPage();
@@ -52,6 +70,9 @@ class App extends Component {
                style={{fontSize: "12.5px"}}
             />
           </summary>
+          {
+
+          }
           <MyButton buttonName='Home'                     setNewPage={setNewPage}/>
           <MyButton buttonName='Dot Product'              setNewPage={setNewPage}/>
           <MyButton buttonName='Cross Product'            setNewPage={setNewPage}/>
