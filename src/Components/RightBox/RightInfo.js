@@ -37,5 +37,4 @@ const RightInfo = ({page}) => {
 	);
 };
 
-
 export default RightInfo;
