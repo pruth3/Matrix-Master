@@ -53,6 +53,15 @@ class App extends Component {
   componentDidMount() {
     this.props.setStartPage();
   }
+
+  renderButtons(setNewPage) {
+    return(
+      BUTTON_NAMES.map(name => {
+        return <MyButton buttonName={name} setNewPage={setNewPage}/>
+      })
+    );
+  }
+
   render() {
     const {
       setNewPage, 
@@ -71,16 +80,12 @@ class App extends Component {
             />
           </summary>
           {
-            BUTTON_NAMES.map(name => {
-              return <MyButton buttonName={name} setNewPage={setNewPage}/>
-            })
+            this.renderButtons(setNewPage)
           }
         </details>
         <div className="left bg-blue white b--lightest-blue br3">
           {
-            BUTTON_NAMES.map(name => {
-              return <MyButton key={name} buttonName={name} setNewPage={setNewPage}/>
-            })
+            this.renderButtons(setNewPage)
           }
         </div>
         <RightInfo page={page}/>
