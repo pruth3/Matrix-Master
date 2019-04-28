@@ -52,6 +52,9 @@ const mapDispatchToProps = (dispatch) => {
 const solvedMatrix = (matrix1, matrix2) => math.multiply(matrix1, matrix2);
 
 class LinMap extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, vectorArray,solve, setCreate, setModify, setModify2, setSolve} = this.props;
 		return(
