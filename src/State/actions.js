@@ -5,7 +5,7 @@ import {
 } from './constants.js';
 
 const PAGE_NAME = {
-  'Home' : 'Home',
+  'Home': 'Home',
   'Dot Product' : 'Dot',
   'Matrix Addition' : 'MatAdd',
   'Scalar Multiplication' : 'ScaMult',

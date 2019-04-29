@@ -67,6 +67,7 @@ class App extends Component {
       setNewPage, 
       page
     } = this.props;
+    const { renderButtons } = this;
     return (
       <div className='App'>
         <MMtitle/>
@@ -80,12 +81,12 @@ class App extends Component {
             />
           </summary>
           {
-            this.renderButtons(setNewPage)
+            renderButtons(setNewPage)
           }
         </details>
         <div className="left bg-blue white b--lightest-blue br3">
           {
-            this.renderButtons(setNewPage)
+            renderButtons(setNewPage)
           }
         </div>
         <RightInfo page={page}/>
