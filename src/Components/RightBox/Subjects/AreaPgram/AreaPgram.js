@@ -56,21 +56,28 @@ class AreaPgram extends React.Component {
 	componentWillUnmount() {
 		console.log('component has unmounted')
 	}
+
+	renderSelect(setCreate) {
+		return(
+			<select 
+				id="rowsPgram"
+				className="matDim"
+				onChange={setCreate}
+				style={{ width: '130px'  }}
+			>
+				<option value="0">Select</option>
+			 	<option value="2">Parallelogram</option>
+			 	<option value="3">Parallelopiped</option>
+			</select>
+		);
+	}
+
 	render() {
 		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setCreate, setModify, setModify2, setModify3, setSolve} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Area of Parallelogram</h1>
-				<select id="rowsPgram"
-						className="matDim"
-						onChange={setCreate}
-						style={{ width: '130px'  }}
-				>
-					<option value="0">Select</option>
-				 	<option value="2">Parallelogram</option>
-				 	<option value="3">Parallelopiped</option>
-
-				</select>
+				{this.renderSelect(setCreate)}
 				{
 					(rows === "2") ?
 						<div> 
