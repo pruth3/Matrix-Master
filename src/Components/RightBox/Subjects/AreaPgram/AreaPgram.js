@@ -74,38 +74,33 @@ class AreaPgram extends React.Component {
 	}
 
 	renderMatrices() {
+		const {rows, setModify, setModify2, setModify3, setSolve} = this.props;
+		return( rows &&
+			<div> 
+				<div>
+					u = <Matrix assignID={'matD'} rows={rows} cols={1} onChangeFunction={setModify}/>
+					
+					v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
 
+					{ rows === "3" &&
+						<React.Fragment> w = <Matrix assignID={'matF'} rows={rows} cols={1} onChangeFunction={setModify3}/></React.Fragment>
+					}
+				</div>
+				<CalculateButton onClickFunction={setSolve} />
+			</div>
+		);
 	}
 
 	render() {
-		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setModify, setModify2, setModify3, setSolve} = this.props;
+		const {matrixArray1, matrixArray2, matrixArray3, solve, rows} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Area of Parallelogram</h1>
-				{this.renderSelect()}
+				{ 
+					this.renderSelect()
+				}
 				{
-					(rows === "2") ?
-						<div> 
-							<div>
-								u = <Matrix assignID={'matD'} rows={rows} cols={1} onChangeFunction={setModify}/>
-								
-								v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
-							</div>
-							<CalculateButton onClickFunction={setSolve} />
-						</div>
-					: (rows === "3") ?
-						<div> 
-							<div>
-								u = <Matrix assignID={'matD'} rows={rows} cols={1} onChangeFunction={setModify}/>
-								
-								v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
-								
-								w = <Matrix assignID={'matF'} rows={rows} cols={1} onChangeFunction={setModify3}/>
-							</div>
-							<CalculateButton onClickFunction={setSolve} />
-						</div>
-					:
-						<p></p>
+					this.renderMatrices()
 				}
 				{
 					(solve && rows === "2") ? 
