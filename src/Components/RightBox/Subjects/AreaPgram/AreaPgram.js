@@ -57,7 +57,8 @@ class AreaPgram extends React.Component {
 		console.log('component has unmounted')
 	}
 
-	renderSelect(setCreate) {
+	renderSelect() {
+		const {setCreate} = this.props;
 		return(
 			<select 
 				id="rowsPgram"
@@ -72,12 +73,16 @@ class AreaPgram extends React.Component {
 		);
 	}
 
+	renderMatrices() {
+
+	}
+
 	render() {
-		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setCreate, setModify, setModify2, setModify3, setSolve} = this.props;
+		const {rows, matrixArray1, matrixArray2, matrixArray3, solve, setModify, setModify2, setModify3, setSolve} = this.props;
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Area of Parallelogram</h1>
-				{this.renderSelect(setCreate)}
+				{this.renderSelect()}
 				{
 					(rows === "2") ?
 						<div> 
