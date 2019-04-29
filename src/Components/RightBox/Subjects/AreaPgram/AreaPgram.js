@@ -83,7 +83,9 @@ class AreaPgram extends React.Component {
 					v = <Matrix assignID={'matE'} rows={rows} cols={1} onChangeFunction={setModify2}/>
 
 					{ rows === "3" &&
-						<React.Fragment> w = <Matrix assignID={'matF'} rows={rows} cols={1} onChangeFunction={setModify3}/></React.Fragment>
+						<React.Fragment>
+							w = <Matrix assignID={'matF'} rows={rows} cols={1} onChangeFunction={setModify3}/>
+						</React.Fragment>
 					}
 				</div>
 				<CalculateButton onClickFunction={setSolve} />
