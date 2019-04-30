@@ -21,7 +21,7 @@ b_{m1} & b_{m2} &  \\dots & b_{mn}
 \\begin{bmatrix}
 a_{11}+b_{11} & a_{12}+b_{12} &  \\dots & a_{1n}+b_{1n} \\\\ 
 a_{21}+b_{21} & a_{22}+b_{22} &  \\dots & a_{2n}+b_{2n} \\\\ 
-\\vdots & \\vdots & \\ddots & \vdots \\\\ 
+\\vdots & \\vdots & \\ddots & \\vdots \\\\ 
 a_{m1}+b_{m1} & a_{m2}+b_{m2} &  \\dots & a_{mn}+b_{mn}
 \\end{bmatrix}
 `
