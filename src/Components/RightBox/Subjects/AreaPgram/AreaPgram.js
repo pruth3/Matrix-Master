@@ -104,17 +104,15 @@ class AreaPgram extends React.Component {
 		const {matrixArray1, matrixArray2, matrixArray3, solve, rows} = this.props;
 		return(
 			(solve && rows === "2") ? 
-				<p>
-					The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2)}
-				</p>
+				<p>The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2)}</p>
+
 			: (solve && rows === "3") ?
-				<p>
-					The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2, matrixArray3)}
-				</p>
+				<p>The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2, matrixArray3)}</p>
+
 			: (!rows || rows === "0") ? 
 				<p>Select Parallelogram or Parallelopiped</p>
-			: 
-				<p>Click submit to compute</p>
+
+			: <p>Click submit to compute</p>
 		);
 	}
 
