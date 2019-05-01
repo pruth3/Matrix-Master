@@ -4,7 +4,6 @@ import tachyons from 'tachyons';
 import './MyButton.css';
 
 const MyButton = ({buttonName, setNewPage}) => {
-	//console.log('My Button', setNewPage)
 	return(
 		<input type="button"
 			   onClick={setNewPage}

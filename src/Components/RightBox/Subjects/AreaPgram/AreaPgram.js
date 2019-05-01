@@ -93,35 +93,35 @@ class AreaPgram extends React.Component {
 		);
 	}
 
-	render() {
+	renderCaption() {
 		const {matrixArray1, matrixArray2, matrixArray3, solve, rows} = this.props;
+		return(
+			(solve && rows === "2") ? 
+				<p>
+					The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2)))}
+				</p>
+			: (solve && rows === "3") ?
+				<p>
+					The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2, matrixArray3)))}
+				</p>
+			: (!rows || rows === "0") ? 
+				<p>
+					Select Parallelogram or Parallelopiped
+				</p>
+			: 
+				<p>
+					Click submit to compute
+				</p>
+		);
+	}
+
+	render() {
 		return(
 			<div className="bg-black p2">
 				<h1 className="center">Area of Parallelogram</h1>
-				{ 
-					this.renderSelect()
-				}
-				{
-					this.renderMatrices()
-				}
-				{
-					(solve && rows === "2") ? 
-						<p>
-							The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2)))}
-						</p>
-					: (solve && rows === "3") ?
-						<p>
-							The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2, matrixArray3)))}
-						</p>
-					: (!rows || rows === "0") ? 
-						<p>
-							Select Parallelogram or Parallelopiped
-						</p>
-					: 
-						<p>
-							Click submit to compute
-						</p>
-				}
+				{ this.renderSelect() }
+				{ this.renderMatrices() }
+				{ this.renderCaption() }
 			</div> 
 		);
 	};
