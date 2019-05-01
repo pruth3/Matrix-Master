@@ -105,13 +105,9 @@ class AreaPgram extends React.Component {
 					The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2, matrixArray3)))}
 				</p>
 			: (!rows || rows === "0") ? 
-				<p>
-					Select Parallelogram or Parallelopiped
-				</p>
+				<p>Select Parallelogram or Parallelopiped</p>
 			: 
-				<p>
-					Click submit to compute
-				</p>
+				<p>Click submit to compute</p>
 		);
 	}
 
