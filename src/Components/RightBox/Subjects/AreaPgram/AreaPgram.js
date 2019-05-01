@@ -51,6 +51,13 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
+const CaculateArea = (vector1, vector2, vector3 = null) => {
+	if (vector3) {
+		return Math.abs(math.det(math.concat(vector1, vector2, vector3)))
+	}
+	return Math.abs(math.det(math.concat(vector1, vector2))) 
+}
+
 
 class AreaPgram extends React.Component {
 	componentWillUnmount() {
@@ -98,11 +105,11 @@ class AreaPgram extends React.Component {
 		return(
 			(solve && rows === "2") ? 
 				<p>
-					The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2)))}
+					The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2)}
 				</p>
 			: (solve && rows === "3") ?
 				<p>
-					The area of the Parallelogram is {Math.abs(math.det(math.concat(matrixArray1, matrixArray2, matrixArray3)))}
+					The area of the Parallelogram is {CaculateArea(matrixArray1, matrixArray2, matrixArray3)}
 				</p>
 			: (!rows || rows === "0") ? 
 				<p>Select Parallelogram or Parallelopiped</p>
