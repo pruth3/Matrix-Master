@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Transpose.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import MatrixTranspose from './MatrixTranspose/MatrixTranspose'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs'
 import { 
 	setCreateTransposeMatrix, 
 	setChangeTransposeMatrix, 
@@ -43,6 +43,8 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+const solvedMatrix = (matrix) => math.transpose(matrix);
+
 class Transpose extends React.Component {
 	render() {
 		const {
@@ -67,7 +69,7 @@ class Transpose extends React.Component {
 				{
 					(solve) ? 
 						//console.log(matrixArray)
-						<MatrixTranspose matrix={matrixArray}/>
+						<MatrixPrint solvedMatrix={solvedMatrix(matrixArray)} />
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 

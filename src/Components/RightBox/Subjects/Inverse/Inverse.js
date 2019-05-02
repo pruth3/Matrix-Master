@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Inverse.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
-import MatrixInverse from './MatrixInverse/MatrixInverse'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateInverse, 
 	setModifyInverseMatrix, 
@@ -41,7 +41,15 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+const solvedMatrix = (matrix) => {
+	if (!math.det(matrix)) return <p>The following cannot be inversed, the determinant is 0</p>
+	return <MatrixPrint solvedMatrix={math.inv(matrix)} />
+}
+
 class Inverse extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setSolve} = this.props;
 		return(
@@ -63,7 +71,7 @@ class Inverse extends React.Component {
 				}
 				{
 					(solve) ? 
-						<MatrixInverse matrix={matrixArray}/>
+						solvedMatrix(matrixArray)
 					:(rows) ?
 						<p>Click submit to compute</p>
 					: 

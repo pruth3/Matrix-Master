@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+h1 {
+  margin: 0px;
+}
+
 .particles {
   position: fixed;
   top: 0;
@@ -12,29 +16,50 @@
 }
 
 .left, .right {
-  
   margin: 2%;
   margin-top: 0px;
 }
 
 .left {
-  position: fixed;
-  height: 740px;
-  border: solid #cdecff;
-  float: left; 
-  width: 13%;
-  margin-top: 25px;
-  padding-top: 7px;
+  display: none;
 }
 
 .right {
-  height: 650px;
+  /*height: 650px;*/
   float: right;
   border: solid #ff725c;
-  margin-left: 0px;
+  width: 96%;
 }
 
+.title {
+  width: 96%;
+}
 
+.dropMenu {
+  display: block;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width:1320px) {
+  .dropMenu {
+    display: none;
+  }
+  .left {
+    display: block;
+    position: fixed;
+    border: solid #cdecff;
+    float: left; 
+    width: 13%;
+    margin-top: 25px;
+    padding-top: 7px;
+  }
+  .right {
+    width: 80%;
+  }
+  .title {
+    width: 80%;
+  }
+}
 
 p {
   font-family: Code;

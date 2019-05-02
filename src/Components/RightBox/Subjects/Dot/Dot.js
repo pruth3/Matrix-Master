@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Dot.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
@@ -58,6 +57,9 @@ var flatten = function(arr) {
 };
 
 class Dot extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray1, matrixArray2, solve, setCreate, setModify, setModify2, setSolve} = this.props;
 		return(

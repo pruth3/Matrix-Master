@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Det.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
@@ -18,8 +17,8 @@ const mapStateToProps = (state) => {
   		rows: state.createMatrix.DetRows, 
   		matrixArray: state.createMatrix.DetArray,
   		solve: state.createMatrix.solveDet, 
-	}
-} 
+	};
+};
 
 const mapDispatchToProps = (dispatch) => { 
  	return {
@@ -38,10 +37,13 @@ const mapDispatchToProps = (dispatch) => {
 		setSolve: () => dispatch(
  			setSolveDet()
  		), 
-	}
-}
+	};
+};
 
 class Det extends React.Component {
+	componentWillUnmount() {
+		console.log('component has unmounted')
+	}
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setSolve} = this.props;
 		return(
@@ -73,7 +75,7 @@ class Det extends React.Component {
 				}
 			</div> 
 		);
-	}
-}
+	};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Det);  

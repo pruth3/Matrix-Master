@@ -1,7 +1,4 @@
 import React from 'react';
-//eslint-disable-next-line
-import tachyons from 'tachyons';
-import './RightBox.css';
 import Home from './Subjects/Home/Home';
 import Dot from './Subjects/Dot/Dot';
 import MatAdd from './Subjects/MatAdd/MatAdd';
@@ -16,14 +13,15 @@ import AreaPgram from './Subjects/AreaPgram/AreaPgram';
 import Expon from './Subjects/Expon/Expon';
 import Trace from './Subjects/Trace/Trace';
 import Cross from './Subjects/Cross/Cross';
+import Contributors from './Subjects/Contributors/Contributors';
 
 
 const RightBox = ({page}) => {
 	return(
-		<div className="right w-80 bg-blue white b--lightest-blue br3">
+		<div className="right bg-blue white b--lightest-blue br3">
 			{
-				(page === "MatAdd")? 		<MatAdd/> :
-				(page === "Dot")? 		    <Dot/> :
+				(page === "MatAdd")?		<MatAdd/>:
+				(page === "Dot")? 		    <Dot/>:
 				(page === "ScaMult") ? 		<ScaMult/>:
 				(page === "Transpose") ? 	<Transpose/>:
 				(page === "MatMult") ? 		<MatMult/>:
@@ -35,10 +33,11 @@ const RightBox = ({page}) => {
 				(page === "Expon")?			<Expon/>:
 				(page === "Trace")?			<Trace/>:
 				(page === "Cross")?			<Cross/>:
+				(page === "Contributors") ? <Contributors/>:
 				<Home/>
 			}
        </div>
 	);
-}
+};
 
 export default RightBox;

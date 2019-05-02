@@ -1,13 +1,13 @@
 import React from 'react'; 
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './Home.css'
+import './Home.css';
 
 const Home = () => {
 	return(
-		<div className="mainDiv">
+		<div>
 			<footer className="footStyle tc-l bg-center cover bg-black">
-			  <div className="w-100 ph3 pv5 bg-black-80 blackShade">
+			  <div className="w-100 ph3 bg-black-80 blackShade">
 			  	<h1 className="homeText">
 			  		Powerful, open source computational web application for everyone.
 			  	</h1>
@@ -21,5 +21,5 @@ const Home = () => {
 		</div>
 	); 
 }
-
+ 
 export default Home;

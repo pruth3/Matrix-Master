@@ -1,9 +1,7 @@
 import React from 'react';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './MatrixSM.css';
-//import './../../Matrix/Matrix.css'
-import math from 'mathjs';
+import './MatrixPrint.css';
 
 const subItems = (row) => {
 	let td = [];
@@ -23,16 +21,14 @@ const items = (matrix) => {
 	return tr;
 }
 
-const MatrixSM = ({scale, matrix}) => {
-	if (!scale) scale = 1;
-	const solvedMatrix = math.multiply(scale, matrix);
-	return(
+const MatrixPrint = ({solvedMatrix}) => {
+	return (
 		<form className="black-80">
 			<table className="matBorder">
 				{items(solvedMatrix)}
 			</table>
 		</form>
-	)
+	);
 }
 
-export default MatrixSM;
+export default MatrixPrint;

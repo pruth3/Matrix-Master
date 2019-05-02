@@ -4,23 +4,25 @@ import {connect} from 'react-redux';
 import tachyons from 'tachyons'; 
 import './MatAdd.css';
 //import {Bar} from 'react-chartjs-2';s
-import Matrix from '../../Reusable/Matrix/Matrix';
-import AddMatrix from './AddMatrix/AddMatrix';
+import Matrix from '../../Reusable/Matrix/Matrix'; 
+//import AddMatrix from './AddMatrix/AddMatrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateMatrix,
 	setChangeMatrix,
 	setAddMatrix
 } from './State/actions';
 
-const mapStateToProps = (state) => {
-  	return {
-   		row: state.createMatrix.row, 
-   		col: state.createMatrix.col, 
-   		matrixArray1: state.createMatrix.matrixArray1, 
-   		matrixArray2: state.createMatrix.matrixArray2, 
- 		addMatrix: state.createMatrix.addMatrix 
+const mapStateToProps = state => {
+	return {
+		row: state.createMatrix.row,
+		col: state.createMatrix.col,
+		matrixArray1: state.createMatrix.matrixArray1,
+		matrixArray2: state.createMatrix.matrixArray2,
+		addMatrix: state.createMatrix.addMatrix
 	}
 }
 
@@ -31,7 +33,9 @@ const mapDispatchToProps = (dispatch) => {
 		setAddMatrix: () => dispatch(setAddMatrix())
 	}
 }
- 
+
+const solvedMatrix = (matrix1, matrix2) => math.add(matrix1, matrix2);
+
 class MatAdd extends React.Component {
 	render() {
 		const {
@@ -60,7 +64,7 @@ class MatAdd extends React.Component {
 					}
 					{
 						(addMatrix) ? 
-							<AddMatrix matrix1={matrixArray1} matrix2={matrixArray2} />
+							<MatrixPrint solvedMatrix={solvedMatrix(matrixArray1, matrixArray2)} />
 						:(col) ?
 							<p>Click submit to compute</p>
 						: 

@@ -2,13 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 //eslint-disable-next-line
 import tachyons from 'tachyons';
-import './MatSolve.css'
 import Matrix from '../../Reusable/Matrix/Matrix';
 import MatrixSelect from '../../Reusable/MatrixSelect/MatrixSelect';
 import CalculateButton from '../../Reusable/CalculateButton/CalculateButton';
 import SolVector from './SolVector/SolVector';
-import MatrixSolve from './MatrixSolve/MatrixSolve'
-//import MatrixSM from './MatrixSM/MatrixSM'
+import MatrixPrint from '../../Reusable/MatrixPrint/MatrixPrint';
+import math from 'mathjs';
 import {
 	setCreateMatrixSolve,
 	setModifyMatrixSolve,
@@ -51,6 +50,8 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
+const solvedMatrix = (matrix, vector) => math.lusolve(matrix, vector);
+
 class MatSolve extends React.Component {
 	render() {
 		const {rows, matrixArray, solve, setCreate, setModify, setModify2, setSolve, bArray} = this.props;
@@ -80,7 +81,7 @@ class MatSolve extends React.Component {
 						<div>
 							<SolVector rows={rows}/>
 							<div className="symbol"><p>=</p></div>
-							<MatrixSolve matrix={matrixArray} vector={bArray}/>
+							<MatrixPrint solvedMatrix={solvedMatrix(matrixArray, bArray)} />
 						</div>
 					:(rows) ?
 						<p>Click submit to compute</p>
